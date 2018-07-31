@@ -1,24 +1,19 @@
-# README
+# ポートフォリオ投稿サイト「porpos!」のソース
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+dockerを使用。
+databaseにはpostgresを使用
+herokuへのデプロイを考えdocker-compose でrails postgresコンテナを使用し開発→herokuへデプロイ
 
-Things you may want to cover:
+起動方法:
 
-* Ruby version
+* Docker for Window, Docker for Mac, docker-toolbox　のいずれかがインストールされている
 
-* System dependencies
+* git clone を行う
 
-* Configuration
+* porposのルートディレクトリ /porpos-web に移動
 
-* Database creation
+* docker-compose build を実行し　DBコンテナとRailsコンテナをビルド
 
-* Database initialization
+* docker-compose up を実行しDBコンテナとRailsコンテナを起動
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* localhost:3000　でブラウザからアクセス　（docker-toolboxの場合は　"docker-machine-ip":3000）

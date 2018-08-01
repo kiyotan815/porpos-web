@@ -6,9 +6,26 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Patua+One|Shrikhand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/earlyaccess/mplus1p.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
+    <script type="text/javascript">
+      jQuery(function($) {
+        $('.bg-slider').bgSwitcher({
+            images: ['<%= asset_path 'home1.jpg' %>', '<%= asset_path 'home2.jpg' %>', '<%= asset_path 'home3.jpg' %>',
+                     '<%= asset_path 'home5.jpg' %>'],
+            interval: 5000,
+            shuffle: true,
+            effect: "fade"
+        });
+      });
+    </script>
   </head>
 
   <body>
+    <%= render 'header' %>
     <%= yield %>
+    <%= render 'footer' %>
   </body>
 </html>

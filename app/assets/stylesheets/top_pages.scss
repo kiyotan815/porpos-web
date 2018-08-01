@@ -1,0 +1,181 @@
+// Place all the styles related to the TopPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.bg-slider {
+	width: 100vw;
+	height: 100vh;
+	background-position:center center;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.bg-slider__title{
+	color: #fff;
+	font-size: 48px;
+	line-height: 1.5;
+	font-weight: bold;
+	text-align:center;
+	text-shadow: 1px 1px 1px #000;
+}
+
+body {
+  #titleimage {
+  }
+  background: #ebffec;
+  padding-top: 30px;
+  #indexLogo {
+    z-index: 1;
+    position: absolute;
+    color: rgba(0, 0, 0, 0.86);
+    top: 37%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+    text-shadow: 2px 2px 2px #000;
+    h1 {
+      color: #ffffff;
+      letter-spacing: 8px;
+      font-size: 10em;
+      line-height: 1.5em;
+      font-weight: bold;
+      text-align:center;
+      font-family: 'Abril Fatface', cursive;
+      margin-bottom: 0;
+    }
+    p {
+      color: #ffffff;
+      font-size: 3em;
+      text-align: center;
+      font-family: "Sawarabi Gothic";
+      font-weight: bold;
+      line-height: 1.4em;
+      border-top: 4px ridge white;
+      border-bottom: 4px ridge white;
+    }
+    a {
+      text-shadow: none;
+    }
+  }
+}
+
+#screenG {
+  height:  100%;
+  width: 100%;
+  background-color: rgb(171, 255, 180);
+  opacity: 0.3;
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top:0;
+}
+
+.bg-slider {
+    height: 100vh;
+    width: 100%;
+    background-color: #FFF;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-bottom: 0;
+}
+
+.bg-slider {
+    background-position: center top\9;
+    background-repeat: repeat-x\9;
+}
+
+*+html .bg-slider {
+    background-position: center top;
+    background-repeat: repeat-x;
+}
+
+
+.button {
+  font-family: 'Patua One', cursive;
+  font-size: 30px;
+  letter-spacing: 15px;
+  display: inline-block;
+  width: 100%;
+  height: 54px;
+  margin-top: 30px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 60px;
+  outline: none;
+}
+.button::before,
+.button::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  content: '';
+}
+.button,
+.button::before,
+.button::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.button {
+  position: relative;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+}
+.button span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  border: 2px solid #333;
+  text-align: center;
+  line-height: 56px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  pointer-events: none;
+}
+.button span:nth-child(1) {
+  background-color: #333;
+  color: #fff;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: 50% 50% -30px;
+  -moz-transform-origin: 50% 50% -30px;
+  transform-origin: 50% 50% -30px;
+}
+.button span:nth-child(2) {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transform-origin: 50% 50% -30px;
+  -moz-transform-origin: 50% 50% -30px;
+  transform-origin: 50% 50% -30px;
+}
+.button:hover span:nth-child(1) {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+.button:hover span:nth-child(2) {
+  background-color: #333;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+}

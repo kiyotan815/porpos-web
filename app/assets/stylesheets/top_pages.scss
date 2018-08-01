@@ -2,9 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.jumbotron .container {
-  padding-top: 40px;
-}
 
 .bg-slider {
 	width: 100vw;
@@ -28,7 +25,7 @@ body {
   #titleimage {
   }
   background: #ebffec;
-  padding-top: 60px;
+  padding-top: 30px;
   #indexLogo {
     z-index: 1;
     position: absolute;
@@ -42,46 +39,27 @@ body {
     padding:0;
     text-shadow: 2px 2px 2px #000;
     h1 {
-        color: #ffffff;
-        letter-spacing: 8px;
-	      font-size: 10em;
-	      line-height: 1.5em;
-	      font-weight: bold;
-	      text-align:center;
-        font-family: 'Abril Fatface', cursive;
-        margin-bottom: 0;
+      color: #ffffff;
+      letter-spacing: 8px;
+      font-size: 10em;
+      line-height: 1.5em;
+      font-weight: bold;
+      text-align:center;
+      font-family: 'Abril Fatface', cursive;
+      margin-bottom: 0;
     }
     p {
-        color: #ffffff;
-        font-size: 3em;
-        text-align: center;
-        font-family: "Sawarabi Gothic";
-        font-weight: bold;
-        line-height: 1.4em;
-        border-top: 4px ridge white;
-        border-bottom: 4px ridge white;
+      color: #ffffff;
+      font-size: 3em;
+      text-align: center;
+      font-family: "Sawarabi Gothic";
+      font-weight: bold;
+      line-height: 1.4em;
+      border-top: 4px ridge white;
+      border-bottom: 4px ridge white;
     }
-    a{
-      text-shadow: 0px 0px 0px #000;
-      display: inline-block;
-      background-color: #2cc3b6;/*背景色*/
-      color: #FFF;/*文字色*/
-      font-size: 1em;/*文字サイズ*/
-      line-height: 1.2;
-      text-decoration: none;
-      letter-spacing: 0.05em;/*字間*/
-      padding:  1em 2.6em;/*ボタン内の余白*/
-      border-radius: 3px;/*角の丸み*/
-        cursor: pointer;
-      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);/*影*/
-      -webkit-tap-highlight-color: transparent;
-      transition: .3s ease-out;/*変化を緩やかに*/
-      &:hover {
-        box-shadow: 0 3px 3px 0
-        rgba(0,0,0,0.14), 0 1px 7px 0
-        rgba(0,0,0,0.12), 0 3px 1px -1px
-        rgba(0,0,0,0.2);/*浮き上がるように*/
-      }
+    a {
+      text-shadow: none;
     }
   }
 }
@@ -118,4 +96,86 @@ body {
 *+html .bg-slider {
     background-position: center top;
     background-repeat: repeat-x;
+}
+
+
+.button {
+  font-family: 'Patua One', cursive;
+  font-size: 30px;
+  letter-spacing: 15px;
+  display: inline-block;
+  width: 100%;
+  height: 54px;
+  margin-top: 30px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 60px;
+  outline: none;
+}
+.button::before,
+.button::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  content: '';
+}
+.button,
+.button::before,
+.button::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.button {
+  position: relative;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+}
+.button span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  border: 2px solid #333;
+  text-align: center;
+  line-height: 56px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  pointer-events: none;
+}
+.button span:nth-child(1) {
+  background-color: #333;
+  color: #fff;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: 50% 50% -30px;
+  -moz-transform-origin: 50% 50% -30px;
+  transform-origin: 50% 50% -30px;
+}
+.button span:nth-child(2) {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transform-origin: 50% 50% -30px;
+  -moz-transform-origin: 50% 50% -30px;
+  transform-origin: 50% 50% -30px;
+}
+.button:hover span:nth-child(1) {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+.button:hover span:nth-child(2) {
+  background-color: #333;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
 }

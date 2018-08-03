@@ -26,6 +26,7 @@ body > .container {
     a {
       text-decoration: none;
       color: #9d9d9d;
+      transition: 0.4s;
       &:hover {
         color: white;
       }

@@ -1,6 +1,9 @@
 
 #form {
   margin-top : 30px;
+  a {
+    text-decoration: none;
+  }
   margin-bottom: 50px;
   border-radius : 5%;
   padding: 20px;
@@ -50,14 +53,14 @@
   cursor        : pointer;     /* カーソル   */
   padding       : 12px 52px;   /* 余白       */
   background    : #e1ffc3;     /* 背景色     */
-  color         : #999999;     /* 文字色     */
+  color         : #9d9d9d;     /* 文字色     */
   line-height   : 1em;         /* 1行の高さ  */
-  transition    : .3s;         /* なめらか変化 */
+  transition    : 0.5s;         /* なめらか変化 */
   box-shadow    : 4px 4px 3px #666666;  /* 影の設定 */
   border        : 2px solid #ccff99;    /* 枠の指定 */
 }
 .form_btn:hover {
   box-shadow    : none;        /* カーソル時の影消去 */
-  color         : #ccff99;     /* 背景色     */
-  background    : #999999;     /* 文字色     */
+  background    : #b7dd92; 
+  color         : #9d9d9d;    
 }

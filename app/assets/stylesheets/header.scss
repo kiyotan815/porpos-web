@@ -27,3 +27,18 @@ header {
     }
   }
 }
+
+#dropdown__menu {
+  background: #222;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  a {
+    color: #9d9d9d;
+    transition: 0.3s;
+    letter-spacing: 3px;
+    &:hover {
+      color: white;
+      background: #222;
+    }
+  }
+}

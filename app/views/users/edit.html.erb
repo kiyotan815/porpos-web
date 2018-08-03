@@ -1,1 +1,40 @@
-aaaa
+<% provide(:title, "アカウント設定") %>
+<div class="container" id="form">
+  <div class="user_edit_content">
+    <div class="form__header">
+      <h3 style="text-align: center">アカウント設定</h3>
+    </div>
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+        
+      <div class="form-group">
+        <%= f.label :name, "ユーザー名" %><br />
+        <%= f.text_field :name, placeholder: "username", class: 'form-control', autofocus: true%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email, "メールアドレス" %><br />
+        <%= f.email_field :email, placeholder: "PC　携帯　どちらでも可", class: 'form-control', autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, "パスワード" %>
+        <%= f.password_field :password, placeholder: "6文字以上", class: 'form-control', autocomplete: "off" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation, "パスワード( 確認 )" %><br />
+        <%= f.password_field :password_confirmation, placeholder: "6文字以上", class: 'form-control', autocomplete: "off" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :icon_img, "アイコン画像" %>
+        <%= f.file_field :picture %>
+      </div>
+      <div class="actions">
+        <%= f.submit "完了", class: 'form_btn' %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

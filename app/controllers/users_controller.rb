@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "ログインが完了しました"
+      log_in(@user)
+      flash[:success] = "登録が完了しました"
       redirect_to @user  
     else
       render 'new'

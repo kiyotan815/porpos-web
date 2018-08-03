@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   
 
-  get 'sessions/new'
 
   root   'top_pages#home'
   get    '/rules',    to: 'top_pages#rules'

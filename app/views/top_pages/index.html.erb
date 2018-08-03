@@ -1,8 +1,10 @@
-<div class="jumbotron">
-  <div class="container">
-    <h1>Welcome to  PorPos!</h1>
-    <p>PorPos(Portfolio Post)はポートフォリオ投稿サイトです。</p>
-    <p>会員登録することで投稿を行うことができます。</p>
-    <p><a class="btn btn-primary btn-lg" href="/signup" role="button">会員登録 &raquo;</a></p>
+<% unless logged_in? %>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Welcome to  PorPos!</h1>
+      <p>PorPos(Portfolio Post)はポートフォリオ投稿サイトです。</p>
+      <p>会員登録することで投稿を行うことができます。</p>
+      <p><a class="btn btn-primary btn-lg" href="/signup" role="button">会員登録 &raquo;</a></p>
+    </div>
   </div>
-</div>
+<% end %>

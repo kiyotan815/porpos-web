@@ -1,3 +1,4 @@
+<% provide(:title, @user.name) %>
 <div class="container">
   <div class="myprofile_content">
     <div class="icon__img">
@@ -5,5 +6,46 @@
       <h1><%= @user.name %></h1>
       <h3><%= @user.email %></h3>
     </div>
+  </div>
+</div>
+<div class="my_portfolio_content">
+  <h1>投稿した作品</h1>
+  <div class="container flexx">
+   <div class="my_portfolio_card">
+     <%= link_to "", '#' %>
+     <h2>portfolio name</h2>
+     <%= image_tag 'home1.jpg' %>
+     <p>
+       <i class="fas fa-heart"></i>100
+       <i class="fas fa-eye"></i>100
+     </p>
+   </div>
+   <div class="my_portfolio_card">
+     <%= link_to "", '#' %>
+     <h2>portfolio name</h2>
+     <%= image_tag 'home2.jpg' %>
+     <p>
+       <i class="fas fa-heart"></i>100
+       <i class="fas fa-eye"></i>100
+     </p>
+   </div>
+   <div class="my_portfolio_card">
+     <%= link_to "", '#' %>
+     <h2>portfolio name</h2>
+     <%= image_tag 'home3.jpg' %>
+     <p>
+       <i class="fas fa-heart"></i>100
+       <i class="fas fa-eye"></i>100
+     </p>
+   </div>
+   <div class="my_portfolio_card">
+     <%= link_to "", '#' %>
+     <h2>portfolio name</h2>
+     <%= image_tag 'home5.jpg' %>
+     <p>
+       <i class="fas fa-heart"></i>100
+       <i class="fas fa-eye"></i>100
+     </p>
+   </div>
   </div>
 </div>

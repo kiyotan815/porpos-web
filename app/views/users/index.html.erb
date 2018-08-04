@@ -4,7 +4,8 @@
   <ul class="users">
     <% @users.each do |user| %>
       <li>
-        <%= link_to user.name, user %>
+        <%= link_to user.name, user %> |
+        <%= link_to "削除", user, method: :delete, data: { confirm: "削除しますか？" } %>
       </li>
     <% end %>
   </ul>

@@ -91,8 +91,23 @@
   list-style: none;
   margin: 0;
   li {
+    .img_sample {
+      display: inline-block;
+      width: 75px;
+      height: 75px;
+      background: white;
+    }
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid gray;
+    a { 
+      display: inline-block;
+      width: 40%;
+      text-decoration: none;
+      font-size: 16px;
+      &:hover {
+        background: silver;
+      }
+    }
   }
 }

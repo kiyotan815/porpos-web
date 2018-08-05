@@ -1,0 +1,43 @@
+<% provide(:title, '新規投稿') %>
+<div class="container" id="form">
+  <div class="portfolio_post_content">
+    <div class="form__header">
+    <ul>
+      <h3 style="text-align: center">新規投稿</h3>
+    </ul>
+    </div>
+    <%= form_for(@portfolio, url: portfolios_path ) do |f| %>
+
+
+      <div class="form-group">
+        <%= f.label :title, "タイトル" %><br />
+        <%= f.text_field :title, placeholder: "portfolioのタイトルを入力", class: 'form-control', autocomplete: "off" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description, "詳細" %><br />
+        <%= f.text_area :description, placeholder: "portfolioの説明", class: 'form-control', autofocus: true%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :URL, "URL(任意)" %>
+        <%= f.text_field :URL, placeholder: "portfolioのURLがある場合は入力してください", class: 'form-control', autocomplete: "off" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :git_URL, "githubのURL(任意)" %><br />
+        <%= f.text_field :git_URL, placeholder: "githubのソースコードを公開する場合はURLを入力してください", class: 'form-control', autocomplete: "off" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :catcheye_img, "portfolioのイメージ画像（後から編集できます）" %>
+        <%= f.file_field :picture %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "porpos!投稿する", class: 'form_btn' %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

@@ -4,6 +4,8 @@ class TopPagesController < ApplicationController
   end
 
   def index
+    @portfolios = Portfolio.all
+    @arrival = Portfolio.limit(3).order(:created_at)
   end
 
   def rules

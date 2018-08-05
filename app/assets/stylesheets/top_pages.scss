@@ -180,3 +180,54 @@ body {
   -moz-transform: rotateX(-90deg);
   transform: rotateX(-90deg);
 }
+
+.index__content {
+	.arrival{
+	}
+	.arrival{
+		padding: 20px 50px;
+		h1 {
+			margin: 0;
+		}
+	}
+	.portfolio_card {
+    position: relative;
+    box-shadow: 3px 3px 4px gray;
+    background: white;
+    border-radius: 15px;
+    width: calc(33.3% - 40px);
+    margin: 20px;
+    text-align:center;
+    h2 {
+      font-size: 20px;
+    }
+    .portfolio_link {
+      border-radius: 15px;
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      transition: 0.4s;
+      &:hover {
+        background: rgba(#ffcdad, 0.31);
+      }
+    }
+    img {
+      border: 1px solid silver;
+      border-radius: 5px;
+      margin: 0 auto;
+      width: 90%;
+    }
+    p {
+      margin-top: 5px;
+      text-align: right;
+      margin-right: 30px;
+   }
+
+    i {
+      margin-left: 10px;
+    }
+  }
+}

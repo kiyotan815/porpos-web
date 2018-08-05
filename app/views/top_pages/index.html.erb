@@ -8,3 +8,41 @@
     </div>
   </div>
 <% end %>
+<div class="index__content">
+  <div class="container arrival">
+    <h1>最近の投稿</h1>
+    <div class="row">
+      <% @arrival.each do |portfolio| %>
+        <div class="col-md-4 col-sm-4  portfolio_card">
+          <%= link_to "", portfolio ,class: "portfolio_link" %>
+          <h2><%= portfolio.title %></h2>
+          <%= image_tag 'home1.jpg' %>
+          <p>
+            <span><%= portfolio.user.name %></span>
+            <i class="fas fa-heart"></i>100
+            <i class="fas fa-eye"></i>100
+          </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="container popular">
+    <h1>人気</h1>
+    <div class="row">
+      <% @arrival.each do |portfolio| %>
+        <div class="col-md-4 col-sm-4 portfolio_card">
+          <%= link_to "", portfolio ,class: "portfolio_link" %>
+          <h2><%= portfolio.title %></h2>
+          <%= image_tag 'home1.jpg' %>
+          <p>
+            <span><%= portfolio.user.name %></span>
+            <i class="fas fa-heart"></i>100
+            <i class="fas fa-eye"></i>100
+          </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="container all_portfolio">
+  </div>
+</div>

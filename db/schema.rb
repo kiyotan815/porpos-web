@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180804041834) do
+ActiveRecord::Schema.define(version: 20180805082427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "portfolios", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description"
+    t.text "URL"
+    t.text "git_URL"
+    t.string "catcheye_img"
+    t.boolean "release", default: true
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_portfolios_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_portfolios_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -25,4 +39,5 @@ ActiveRecord::Schema.define(version: 20180804041834) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "portfolios", "users"
 end

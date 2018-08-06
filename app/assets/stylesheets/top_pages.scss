@@ -183,24 +183,33 @@ body {
 
 .index__content {
 	.container{
-		padding: 20px 50px;
+    border-bottom: 1px solid white;
+		padding: 50px 0;
 		h1 {
 			margin: 0;
 		}
+    .portfolio__user__link {
+      position: absolute;
+      margin-top: 7px;
+      display: block;
+      text-decoration: none;
+    }
 	}
 	.portfolio_card {
     position: relative;
     box-shadow: 3px 3px 4px gray;
     background: white;
-    border-radius: 15px;
-    width: calc(33.3% - 40px);
-    margin: 20px;
+    border-radius: 5px;
+    width: calc(25% - 30px);
+    margin: 15px;
     text-align:center;
     h2 {
       font-size: 20px;
+      margin: 0;
+      padding: 10px;
     }
     .portfolio_link {
-      border-radius: 15px;
+      border-radius: 5px;
       position: absolute;
       display: block;
       top: 0;
@@ -214,14 +223,15 @@ body {
     }
     img {
       border: 1px solid silver;
-      border-radius: 5px;
+      border-radius: 3px;
       margin: 0 auto;
-      width: 90%;
+      width: 100%;
     }
     p {
       margin-top: 5px;
       text-align: right;
       margin-right: 30px;
+      font-size: 12px;
    }
 
     i {

@@ -6,7 +6,7 @@ class TopPagesController < ApplicationController
   def index
     @portfolios = Portfolio.all
     @arrival = Portfolio.limit(4).order("created_at DESC")
-    @portfolio_all = Portfolio.all.order("created_at DESC")
+    @portfolio_all = Portfolio.all
   end
 
   def rules

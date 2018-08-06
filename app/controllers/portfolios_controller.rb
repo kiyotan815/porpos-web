@@ -26,6 +26,12 @@ class PortfoliosController < ApplicationController
     @portfolio = Portfolio.find(params[:id])
   end
 
+  def destroy
+    Portfolio.find(params[:id]).destroy
+    flash[:success] = "削除が完了しました"
+    redirect_to portfolios_url
+  end
+
   private
 
     def portfolio_params

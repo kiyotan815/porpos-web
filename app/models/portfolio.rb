@@ -28,4 +28,13 @@ class Portfolio < ApplicationRecord
   mount_uploader :catcheye_img, ImageUploader
   validates :user_id, presence: true
   validates :title, presence:true, length: { maximum: 100 }
+  validate :catcheye_size
+
+  private
+
+    def catcheye_size
+      if catcheye_img.size > 5.megabytes
+        errors.add(:catcheye_img, "画像ファイルは5MB以下にしてください")
+      end
+    end
 end

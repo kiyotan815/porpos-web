@@ -1,1 +1,13 @@
-aaaa
+<% provide(:title, '全投稿') %>
+<div class="container">
+  <h1>全投稿</h1>
+  <ul class="users portfolios">
+    <% @portfolios.each do |portfolio| %>
+      <li>
+        <%= image_tag portfolio.catcheye_img %>
+        <%= link_to portfolio.title, portfolio %> |
+        <%= link_to "削除", portfolio, method: :delete, data: { confirm: "[#{portfolio.title}]を削除しますか？" } %>
+      </li>
+    <% end %>
+  </ul>
+</div>

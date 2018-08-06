@@ -1,5 +1,5 @@
 .myprofile_content {
-  .icon__img {
+  img {
     height: 150px;
     width:  150px;
     border-radius: 50%;
@@ -92,11 +92,11 @@
   list-style: none;
   margin: 0;
   li {
-    .img_sample {
+    img {
       display: inline-block;
+      border-radius: 50%;
       width: 75px;
       height: 75px;
-      background: white;
     }
     overflow: auto;
     padding: 10px 0;

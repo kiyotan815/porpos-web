@@ -5,6 +5,7 @@
 #  id              :bigint(8)        not null, primary key
 #  admin           :boolean          default(FALSE)
 #  email           :string
+#  icon_img        :string
 #  name            :string
 #  password_digest :string
 #  created_at      :datetime         not null
@@ -17,6 +18,7 @@
 
 class User < ApplicationRecord
   has_many :portfolios, dependent: :destroy
+  mount_uploader :icon_img, ImageUploader
   before_save { email.downcase! }
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i

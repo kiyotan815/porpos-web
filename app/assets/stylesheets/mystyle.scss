@@ -11,7 +11,13 @@ body {
   font-family: "Sawarabi Gothic";
   padding-top: 60px;
   padding-bottom: 100px;
-  background: #eff7ef;
+  // background: #eff7ef;
+  background: url(/images/body_back.png);
+  background-repeat: repeat;
+  color: #837770;
+}
+:not(footer,header) {
+  color: #ffffff;
 }
 
 

@@ -1,4 +1,18 @@
+.my__page {
+  background: url(/images/profile_back.png);
+  background-repeat: repeat;
+  padding: 50px;
+}
 .myprofile_content {
+  //background: url(/images/profile_back.png);
+  color: #333;
+  background: white;
+  box-shadow: 3px 3px 4px gray;
+  border-radius: 15px;
+  width: 40%;
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
   img {
     height: 150px;
     width:  150px;
@@ -8,19 +22,12 @@
     background: silver;
     margin: 10px auto;
   }
-  color: #333;
-  background: white;
-  box-shadow: 3px 3px 4px gray;
-  border-radius: 15px;
-  width: 50%;
-  text-align: center;
-  padding: 20px;
-  margin: 0 auto;
 }
 
 .my_portfolio_content {
+  background: url(/images/myportfolio_back.png);
+  background-repeat: repeat;
   padding: 10px;
-  background: #cce6e2;
   border-radius: 10px;
   h1{
       color: #444;

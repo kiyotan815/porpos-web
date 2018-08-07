@@ -10,7 +10,7 @@
   transition: 0.4s;
   text-transform: uppercase;
   &:hover {
-    color: rgb(104, 199, 102);
+    color: #9c9c9c;
   }
 }
 
@@ -30,7 +30,7 @@
 }
 
 #dropdown__menu {
-  background: #333;
+  background: #3c2f22;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   a {

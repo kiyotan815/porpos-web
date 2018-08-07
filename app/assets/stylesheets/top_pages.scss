@@ -137,9 +137,18 @@
 /* top page */
 body {
   .jumbotron {
-    background: white;
+    background: url(/images/myportfolio_back.png);
     a {
+			color: inherit;
+			background: #f9dcd5;
       margin-right: 30px;
+			border: 1px solid gray;
+			transition: 0.2s;
+			&:hover {
+					border: 1px solid gray;
+					opacity: 0.9;
+					background: #f9dcd5;
+			}
     }
   }
 }
@@ -162,29 +171,51 @@ body {
 
 /* portfolio card*/
 .portfolio_content {
-	width: calc(25% - 30px);
-	margin: 10px 15px;
+	width: calc(20% - 46px);
+	margin: 10px 23px;
 	padding:0;
 	.portfolio_card {
 		// border: 1px solid gray;
 		padding: 8.75px 14px;
 		position: relative;
-		box-shadow: 0px 0px 8px;
-		background: #422500;
+		overflow: hidden;
+		box-shadow: 2px 2px 5px black;
+		background: url(/images/card_back.jpg);
+		background-repeat: repeat;
 		border-radius: 7px;
-		border-top-right-radius: 15%;
-		border-bottom-left-radius: 5%;
 		width: 100%;
+		figcaption {
+			// border: 10px solid black;
+			border-radius: inherit;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+			padding: 10px 20px;
+			color: white;
+			position: absolute;
+			top: -100%;
+			left: -100%;
+			z-index: 2;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,.6);
+			-webkit-transition: .3s;
+			transition: .3s;
+			opacity: 1;
+		}
+		&:hover figcaption {
+			top: 0;
+			left: 0;
+		}
 		h2 {
 			font-size: 20px;
 			margin: 0;
 			padding: 5px 0;
 		}
 		img {
-			border: 1px solid #0d0400;
+			// border: 1px solid #0d0400;
 			border-radius: 3px;
 			width: 100%;
-			height: 180px;
+			height: 130px;
 		}
 		p {
 			margin-top: 5px;
@@ -198,15 +229,13 @@ body {
 	  .portfolio_link {
 			border-radius: inherit;
 			position: absolute;
+			z-index: 4;
 			display: block;
 			top: 0;
 			left: 0;
 			height: 100%;
 			width: 100%;
 			transition: 0.4s;
-			&:hover {
-				background: rgba(#ffcdad, 0.31);
-			}
 		}
 	}
 }

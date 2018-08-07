@@ -7,7 +7,7 @@
     </ul>
     </div>
     <%= form_for(@portfolio, url: portfolios_path ) do |f| %>
-
+      <%= render 'shared/error_messages', object: f.object %>
 
       <div class="form-group">
         <%= f.label :title, "タイトル" %><br />

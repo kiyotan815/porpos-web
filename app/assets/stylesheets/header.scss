@@ -7,14 +7,13 @@
   letter-spacing: -1px;
   text-decoration: none;
   font-weight: bold;
-  transition: 4.342s;
+  transition: 0.4s;
   text-transform: uppercase;
+  &:hover {
+    color: rgb(104, 199, 102);
+  }
 }
 
-#logo:hover {
-  color: rgb(139, 167, 142);
-  text-decoration: none;
-}
 
 
 #header {
@@ -37,7 +36,7 @@
   a {
     color: #9d9d9d;
     transition: 0.3s;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     &:hover {
       color: white;
       background: #333;

@@ -1,7 +1,7 @@
 <% provide(:title, '全ユーザー') %>
 <div class="container">
   <h1>全ユーザー</h1>
-  <ul class="users">
+  <ul class="index__list users">
     <% @users.each do |user| %>
       <li>
         <%= image_tag user.icon_img.url %>

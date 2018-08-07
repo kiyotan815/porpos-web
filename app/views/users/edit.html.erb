@@ -5,8 +5,8 @@
       <h3 style="text-align: center">アカウント設定</h3>
     </div>
     <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages' %>
-        
+      <%= render 'shared/error_messages', object: f.object %>
+
       <div class="form-group">
         <%= f.label :name, "ユーザー名" %><br />
         <%= f.text_field :name, placeholder: "username", class: 'form-control', autofocus: true%>

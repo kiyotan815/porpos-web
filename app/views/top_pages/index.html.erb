@@ -13,50 +13,19 @@
   <div class="container arrival">
     <h1>最近の投稿</h1>
     <div class="row">
-      <% @arrival.each do |portfolio| %>
-        <div class="col-md-3 col-sm-6 portfolio_card">
-          <%= link_to "", portfolio ,class: "portfolio_link" %>
-          <h2><%= portfolio.title %></h2>
-          <%= image_tag portfolio.catcheye_img.url %>
-          <p>
-            <i class="fas fa-heart"></i>100
-            <i class="fas fa-eye"></i>100
-          </p>
-          <%= link_to portfolio.user.name, portfolio.user, class: "portfolio__user__link" %>
-        </div>
-      <% end %>
+      <%= render partial: "portfolio_card", locals: {content: @arrival} %>
     </div>
   </div>
   <div class="container popular">
     <h1>人気</h1>
     <div class="row">
-      <% @arrival.each do |portfolio| %>
-        <div class="col-md-3 col-sm-6 portfolio_card">
-          <%= link_to "", portfolio ,class: "portfolio_link" %>
-          <h2><%= portfolio.title %></h2>
-          <%= image_tag portfolio.catcheye_img.url %>
-          <p>
-            <i class="fas fa-heart"></i>100
-            <i class="fas fa-eye"></i>100
-          </p>
-          <%= link_to portfolio.user.name, portfolio.user, class: "portfolio__user__link" %>
-        </div>
-      <% end %>
+      <%= render partial: "portfolio_card", locals: {content: @arrival} %>
     </div>
   </div>
   <div class="container all_portfolio">
     <h1>全投稿</h1>
-    <% @portfolio_all.each do |portfolio| %>
-      <div class="col-md-3 col-sm-6 portfolio_card">
-        <%= link_to "", portfolio ,class: "portfolio_link" %>
-        <h2><%= portfolio.title %></h2>
-        <%= image_tag portfolio.catcheye_img.url %>
-        <p>
-          <i class="fas fa-heart"></i>100
-          <i class="fas fa-eye"></i>100
-        </p>
-        <%= link_to portfolio.user.name, portfolio.user, class: "portfolio__user__link" %>
-      </div>
-    <% end %>
+    <div class="row">
+      <%= render partial: "portfolio_card", locals: {content: @portfolio_all} %>
+    </div>
   </div>
 </div>

@@ -11,7 +11,7 @@
         <li>投稿者: <%= @portfolio.user.name %></li>
         <li>詳細</li>
         <li><p>
-          <%= @portfolio.description %>
+          <%= simple_format(@portfolio.description) %>
         </p></li>
       </ul>
     </div>

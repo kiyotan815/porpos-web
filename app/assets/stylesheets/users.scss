@@ -88,27 +88,13 @@
   }
 }
 
+
+/* index */
 .users {
-  list-style: none;
-  margin: 0;
-  li {
-    img {
-      display: inline-block;
-      border-radius: 50%;
-      width: 75px;
-      height: 75px;
-    }
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid gray;
-    a { 
-      display: inline-block;
-      width: 40%;
-      text-decoration: none;
-      font-size: 16px;
-      &:hover {
-        background: silver;
-      }
-    }
+  img {
+    display: inline-block;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
   }
 }

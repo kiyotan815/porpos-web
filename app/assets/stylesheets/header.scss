@@ -7,18 +7,17 @@
   letter-spacing: -1px;
   text-decoration: none;
   font-weight: bold;
-  transition: 4.342s;
+  transition: 0.4s;
   text-transform: uppercase;
+  &:hover {
+    color: #837770;
+  }
 }
 
-#logo:hover {
-  color: rgb(139, 167, 142);
-  text-decoration: none;
-}
 
 
 #header {
-  background: #333;
+  background: #3c2f22;
   li {
     font-size: 18px;
     letter-spacing: 3px;
@@ -31,13 +30,13 @@
 }
 
 #dropdown__menu {
-  background: #333;
+  background: #3c2f22;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   a {
     color: #9d9d9d;
     transition: 0.3s;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     &:hover {
       color: white;
       background: #333;

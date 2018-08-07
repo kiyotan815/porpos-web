@@ -1,12 +1,12 @@
 class PortfoliosController < ApplicationController
-  before_action :logged_in_user , only: [:new, :create]
-
+  before_action :logged_in_user, only: [:new, :create]
+  before_action :admin_user, only: [:destroy, :index]
   def index
     @portfolios = Portfolio.all
   end
 
   def new
-    @portfolio = Portfolio.new
+    @portfolio = Portfolio.new(flash[:portfolio])
   end
 
   def create
@@ -15,7 +15,7 @@ class PortfoliosController < ApplicationController
       flash[:success] = "PorPos!　投稿が完了しました!"
       redirect_to porpos_path
     else
-      redirect_to porpos_path
+      render 'new'
     end
   end
 

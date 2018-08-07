@@ -1,0 +1,23 @@
+<% content.each do |portfolio| %>
+  <div class="col-md-3 col-sm-6 portfolio_content">
+    <div class="portfolio_card">
+      <%= link_to "", portfolio ,class: "portfolio_link" %>
+      <h2><%= portfolio.title %></h2>
+      <%= image_tag portfolio.catcheye_img.url %>
+      <p>
+        <i class="fas fa-heart"></i>100
+        <i class="fas fa-eye"></i>100
+      </p>
+      <figcaption>
+        <h3><%= portfolio.title %></h3>
+        <%= simple_format(portfolio.description) %>
+      </figcaption>
+    </div>
+    <p class="portfolio__user__link">
+      <%= link_to portfolio.user do %>
+        <%= image_tag portfolio.user.icon_img.url %>
+        <%= portfolio.user.name %>
+      <% end %>
+    </p>
+  </div>
+<% end %>

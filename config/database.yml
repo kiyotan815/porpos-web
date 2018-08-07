@@ -83,6 +83,4 @@ test:
 #
 production:
   <<: *default
-  database: porpos_production
-  username: porpos
-  password: <%= ENV['PORPOS_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

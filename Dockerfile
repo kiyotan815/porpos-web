@@ -6,5 +6,5 @@ COPY Gemfile /porpos/Gemfile
 COPY Gemfile.lock /porpos/Gemfile.lock
 RUN bundle install
 COPY . /porpos
-
+RUN RAILS_ENV=production rails assets:precompile
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]

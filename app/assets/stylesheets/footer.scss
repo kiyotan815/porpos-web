@@ -4,7 +4,8 @@
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 100px;
-  background-color: #3c2f22;
+  box-shadow: 0 -7px 10px rgba(#020302, 0.31);
+  background: url(/images/dark_wood_back.jpg);
 }
 body > .container {
   padding: 30px 15px 60px;

@@ -47,10 +47,10 @@
 	align-items: center;
 	justify-content: center;
 }
-#screenG {
+#screen {
   height:  100%;
   width: 100%;
-  background-color: rgb(171, 255, 180);
+  background-color: rgb(255, 219, 171);
   opacity: 0.3;
   position: absolute;
   z-index: 0;
@@ -137,11 +137,26 @@
 /* top page */
 body {
   .jumbotron {
+		box-shadow: 0 0 5px;
+		.container{
+			padding: 0;
+		}
+		text-align: center;
     background: url(/images/myportfolio_back.png);
+		h1,h2 {
+			font-family: 'Abril Fatface', cursive;
+			letter-spacing: 3px;
+			margin-bottom: 15px;
+			font-weight: bold;
+		}
+		h2 {
+			margin-top: 20px;
+			color: #b3864b;
+		}
     a {
 			color: inherit;
 			background: #ffeae3;
-      margin-right: 30px;
+      margin-right: 46px;
 			border: 1px solid gray;
 			transition: 0.2s;
 			&:hover {
@@ -161,102 +176,14 @@ body {
 		margin-top: 20px;
 		padding: 20px 0;
 		h1 {
-			padding-bottom: 5px;
+			margin-bottom: 20px;
 			font-size: 30px;
 			font-weight: bold;
-			margin: 0;
+		}
+		.flex {
+			display: flex;
+			flex-wrap: wrap;
 		}
 	}
-}
 
-/* portfolio card*/
-.portfolio_content {
-	width: calc(20% - 46px);
-	margin: 10px 23px;
-	padding:0;
-	.portfolio_card {
-		// border: 1px solid gray;
-		padding: 8.75px 14px;
-		position: relative;
-		overflow: hidden;
-		box-shadow: 2px 2px 5px black;
-		background: url(/images/card_back.jpg);
-		background-repeat: repeat;
-		border-radius: 7px;
-		width: 100%;
-		figcaption {
-			// border: 10px solid black;
-			border-radius: inherit;
-			border-bottom-left-radius: 0;
-			border-bottom-right-radius: 0;
-			padding: 10px 20px;
-			color: white;
-			position: absolute;
-			top: -100%;
-			left: -100%;
-			z-index: 2;
-			width: 100%;
-			height: 100%;
-			background: rgba(0,0,0,.6);
-			-webkit-transition: .3s;
-			transition: .3s;
-			opacity: 1;
-		}
-		&:hover figcaption {
-			top: 0;
-			left: 0;
-		}
-		h2 {
-			font-size: 20px;
-			margin: 0;
-			padding: 5px 0;
-		}
-		img {
-			// border: 1px solid #0d0400;
-			border-radius: 3px;
-			width: 100%;
-			height: 130px;
-		}
-		p {
-			margin-top: 5px;
-			margin-bottom: 0;
-			text-align: right;
-			font-size: 12px;
-			i {
-				margin-left: 10px;
-			}
-	 }
-	  .portfolio_link {
-			border-radius: inherit;
-			position: absolute;
-			z-index: 4;
-			display: block;
-			top: 0;
-			left: 0;
-			height: 100%;
-			width: 100%;
-			transition: 0.4s;
-		}
-	}
-}
-
-.portfolio__user__link {
-	margin-top: 7px;
-	display: block;
-	padding-left: 14px;
-	img {
-		width: 23px;
-		height: 23px;
-		border-radius: 50%;
-	}
-	a {
-		color: #422500;
-		img {
-			margin-right: 4px;
-		}
-		text-decoration: none;
-		&:hover {
-			opacity: 0.7;
-		}
-	}
 }

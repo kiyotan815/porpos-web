@@ -1,13 +1,13 @@
 .my__page {
-  background: url(/images/profile_back.png);
+  background: url(/images/colk_back.png);
   background-repeat: repeat;
   padding: 50px;
 }
 .myprofile_content {
   //background: url(/images/profile_back.png);
   color: #333;
-  background: white;
-  box-shadow: 3px 3px 4px gray;
+  background: url(/images/light_wood_back.jpg);
+  box-shadow: 0px 5px 12px  rgba(#000000, 0.23);
   border-radius: 15px;
   width: 40%;
   text-align: center;
@@ -26,6 +26,7 @@
 
 .my_portfolio_content {
   background: url(/images/myportfolio_back.png);
+  box-shadow: 0 0 10px;
   background-repeat: repeat;
   padding: 10px;
   border-radius: 10px;
@@ -50,58 +51,20 @@
   }
 }
 
-.container.flexx {
+.flex {
   display: flex;
   flex-wrap: wrap;
-  .my_portfolio_card {
-    position: relative;
-    box-shadow: 3px 3px 4px gray;
-    background: white;
-    border-radius: 15px;
-    width: calc(33.3% - 40px);
-    margin: 20px;
-    text-align:center;
-    h2 {
-      font-size: 20px;
-    }
-    a {
-      border-radius: 15px;
-      position: absolute;
-      display: block;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      transition: 0.4s;
-      &:hover {
-        background: rgba(#ffcdad, 0.31);
-      }
-    }
-    img {
-      border: 1px solid silver;
-      border-radius: 5px;
-      margin: 0 auto;
-      width: 90%;
-      height: 200px;
-    }
-    p {
-      margin-top: 5px;
-      text-align: right;
-      margin-right: 30px;
-    }
-    i {
-      margin-left: 10px;
-    }
-  }
 }
+
+
 
 
 /* index */
 .users {
-  img {
-    display: inline-block;
-    border-radius: 50%;
-    width: 75px;
-    height: 75px;
-  }
+ img {
+   display: inline-block;
+   border-radius: 50%;
+   width: 75px;
+   height: 75px;
+ }
 }

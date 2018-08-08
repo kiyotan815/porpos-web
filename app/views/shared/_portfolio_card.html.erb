@@ -1,0 +1,26 @@
+<% content.each do |portfolio| %>
+  <div class="portfolio_content">
+    <%= image_tag('/images/pin3.png',class: 'pin') %>
+    <div class="portfolio_card">
+      <%= link_to "", portfolio ,class: "portfolio_link" %>
+      <%= image_tag portfolio.catcheye_img.url %>
+      <figcaption>
+        <h3><%= portfolio.title %></h3>
+        <%= simple_format(portfolio.description) %>
+        <p class="like_view_icon">
+          <i class="fas fa-heart"></i>100
+          <i class="fas fa-eye"></i>100
+        </p>
+      </figcaption>
+    </div>
+
+    <% unless mypage %>
+      <p class="portfolio__user__link">
+        <%= link_to portfolio.user do %>
+          <%= image_tag portfolio.user.icon_img.url %>
+          <%= portfolio.user.name %>
+        <% end %>
+      </p>
+    <% end %>
+  </div>
+<% end %>

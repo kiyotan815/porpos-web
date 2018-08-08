@@ -12,7 +12,7 @@ body {
   padding-top: 60px;
   padding-bottom: 100px;
   // background: #eff7ef;
-  background: url(/images/body_back.png);
+  background: url(/images/colk_back.png);
   background-repeat: repeat;
   color: #837770;
 }
@@ -34,6 +34,121 @@ body {
       &:hover {
         background: silver;
       }
+    }
+  }
+}
+/* portfolio card*/
+.portfolio_content {
+  position: relative;
+	width: calc(25% - 46px);
+	margin: 15px 46px 0px 0px;
+	padding:0;
+  .pin {
+    width: 40%;
+    height: 30%;
+    position: absolute;
+    left: -17%;
+    top: -20%;
+    z-index: 3;
+    pointer-events: none
+  }
+}
+@media screen and (max-device-width: 420px) {
+	.portfolio_content {
+		width: calc(50% - 70px);
+		margin: 10px 35px 0px 0px;
+		padding:0;
+		.portfolio_card {
+			img {
+			}
+		}
+	}
+}
+@media screen and (min-device-width: 421px) and (max-device-width: 1025px) {
+	.portfolio_content {
+		width: calc(33% - 30px);
+		margin: 10px 30px 0px 0px;
+		padding:0;
+	}
+}
+
+.portfolio_card {
+  // border: 1px solid gray;
+  padding: 8px;
+  position: relative;
+  box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.44);
+  overflow: hidden;
+  background: url(/images/paperrrr_back.jpg);
+  background-repeat: repeat;
+  width: 100%;
+
+  figcaption {
+    // border: 10px solid black;
+    padding: 10px 20px;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    -webkit-transition: .3s;
+    transition: .3s;
+    opacity: 0;
+    .like_view_icon {
+      padding-left: 15px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  @media screen and (min-device-width: 1025px){
+    &:hover figcaption {
+      opacity: 1;
+    }
+  }
+  h2 {
+    font-size: 20px;
+    margin: 0;
+    padding: 5px 0;
+  }
+  img {
+    max-height: 160px;
+    width: 100%;
+    height: auto;
+    opacity: 0.8;
+  }
+  .portfolio_link {
+    border-radius: inherit;
+    position: absolute;
+    z-index: 4;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: 0.4s;
+  }
+}
+.portfolio__user__link {
+  margin-top: 7px;
+  display: block;
+  padding-left: 8px;
+  text-align:left;
+  img {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+  }
+  a {
+    color: #422500;
+    img {
+      margin-right: 4px;
+    }
+    text-decoration: none;
+    &:hover {
+      opacity: 0.7;
     }
   }
 }

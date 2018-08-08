@@ -1,7 +1,7 @@
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 3em;
+  font-size: 3.2em;
   color: #fff;
   font-family: 'Patua One', cursive;
   letter-spacing: -1px;
@@ -17,7 +17,9 @@
 
 
 #header {
+  box-shadow: 0 7px 10px rgba(#020302, 0.31);
   background: #3c2f22;
+  background: url(/images/dark_wood_back.jpg);
   li {
     font-size: 18px;
     letter-spacing: 3px;

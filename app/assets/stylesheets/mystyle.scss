@@ -43,46 +43,33 @@ body {
 	width: calc(25% - 46px);
 	margin: 15px 46px 0px 0px;
 	padding:0;
-  .pin {
-    width: 40%;
-    height: 30%;
-    position: absolute;
-    left: -17%;
-    top: -20%;
-    z-index: 3;
-    pointer-events: none
-  }
-}
-@media screen and (max-device-width: 420px) {
-	.portfolio_content {
-		width: calc(50% - 70px);
-		margin: 10px 35px 0px 0px;
-		padding:0;
-		.portfolio_card {
-			img {
-			}
-		}
-	}
-}
-@media screen and (min-device-width: 421px) and (max-device-width: 1025px) {
-	.portfolio_content {
-		width: calc(33% - 30px);
-		margin: 10px 30px 0px 0px;
-		padding:0;
-	}
 }
 
 .portfolio_card {
   // border: 1px solid gray;
   padding: 8px;
   position: relative;
-  box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.44);
+  box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.44);
   overflow: hidden;
   background: url(/images/paperrrr_back.jpg);
   background-repeat: repeat;
   width: 100%;
-
+  border-radius: 3%;
+  transition: 0.2s;
+  &:hover {
+    @media screen and (min-device-width: 1025px) {
+      -moz-transform: rotate(5deg);
+      -webkit-transform: rotate(5deg);
+      -o-transform: rotate(5deg);
+      -ms-transform: rotate(5deg);
+      transform: rotate(5deg);
+    }
+  }
   figcaption {
+    h3{
+      font-size: 18px;
+      font-weight: bold;
+    }
     // border: 10px solid black;
     padding: 10px 20px;
     color: white;
@@ -96,6 +83,11 @@ body {
     -webkit-transition: .3s;
     transition: .3s;
     opacity: 0;
+    .caption {
+      overflow: hidden;
+      height: 50%;
+      text-align: right;
+    }
     .like_view_icon {
       padding-left: 15px;
       position: absolute;
@@ -116,7 +108,7 @@ body {
   img {
     max-height: 160px;
     width: 100%;
-    height: auto;
+    height: 160px;
     opacity: 0.8;
   }
   .portfolio_link {
@@ -151,4 +143,26 @@ body {
       opacity: 0.7;
     }
   }
+}
+
+
+@media screen and (max-device-width: 420px) {
+	.portfolio_content {
+		width: calc(50% - 70px);
+		margin: 10px 35px 0px 0px;
+		padding:0;
+		.portfolio_card {
+			img {
+        max-height: 200px;
+        height: 200px;
+			}
+		}
+	}
+}
+@media screen and (min-device-width: 421px) and (max-device-width: 1025px) {
+	.portfolio_content {
+		width: calc(33% - 30px);
+		margin: 10px 30px 0px 0px;
+		padding:0;
+	}
 }

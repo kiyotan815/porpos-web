@@ -2,18 +2,50 @@
 <div class="container portfolio__show">
   <div class="flex">
     <div class="portfolio_left_content">
-      <%= image_tag @portfolio.catcheye_img.url %>
-      <ul>
+      <%= link_to @portfolio.URL do %>
+        <%= image_tag @portfolio.catcheye_img.url %>
+      <% end %>
     </div>
     <div class="portfolio_right_content">
-      <ul>
-        <li>タイトル: <%= @portfolio.title %></li>
-        <li>投稿者: <%= @portfolio.user.name %></li>
-        <li>詳細</li>
-        <li><p>
-          <%= simple_format(@portfolio.description) %>
-        </p></li>
-      </ul>
+      <table>
+        <tr>
+          <td>タイトル</td>
+          <td>:</td>
+          <td><%= @portfolio.title %></td>
+        </tr>
+        <tr>
+          <td>投稿者</td>
+          <td>:</td>
+          <td><%= @portfolio.user.name %></td>
+        </tr>
+        <tr>
+          <td>URL</td>
+          <td>:</td>
+          <td>
+            <% unless @portfolio.URL.blank? %>
+              <%= link_to @portfolio.URL%>
+            <% else %>
+               未登録
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td>github_URL</td>
+          <td>:</td>
+          <td>
+            <% unless @portfolio.git_URL.blank? %>
+              <%= link_to @portfolio.git_URL%>
+            <% else %>
+               未登録
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td>詳細</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>

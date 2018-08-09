@@ -1,6 +1,7 @@
 // Place all the styles related to the TopPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 /* home */
 #indexLogo {
 	z-index: 1;
@@ -137,9 +138,43 @@
 /* top page */
 body {
   .jumbotron {
+
 		box-shadow: 0 0 5px;
+		animation: SlideDown 1.2s ease 0s 1 normal;
+		-webkit-animation: SlideDown 1.2s ease 0s 1 normal;
+
 		.container{
 			padding: 0;
+			animation: fadeIn 1s ease 1s 1 forwards;
+	 		-webkit-animation: fadeIn 1s ease 1s 1 forwards;
+			@media screen and (min-device-width: 1025px){
+				opacity: 0;
+				a {opacity: 0}
+				@keyframes SlideDown {
+					0% {transform: translateY(-100%);}
+					100% {transform: translateY(0);}
+				}
+				@keyframes fadeIn {
+			    0% {
+						opacity: 0;
+						transform: translateX(20%);
+					}
+			    100% {
+						opacity: 1;
+						transform: translateX(0%);
+					}
+				}
+				@-webkit-keyframes fadeIn {
+					0% {
+						opacity: 0;
+						transform: translateX(20%);
+					}
+			    100% {
+						opacity: 1;
+						transform: translateX(0%);
+					}
+				}
+			}
 		}
 		text-align: center;
     background: url(/images/myportfolio_back.png);
@@ -154,6 +189,8 @@ body {
 			color: #b3864b;
 		}
     a {
+			animation: fadeIn 1s ease 2s 1 forwards;
+	 		-webkit-animation: fadeIn 1s ease 2s 1 forwards;
 			color: inherit;
 			background: #ffeae3;
       margin-right: 46px;

@@ -1,4 +1,8 @@
 .alert {
+  list-style-type: none;
   text-align: center;
   margin: 10px auto;
+  li {
+    text-decoration: underline;
+  }
 }

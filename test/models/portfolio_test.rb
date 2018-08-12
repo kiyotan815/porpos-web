@@ -9,6 +9,7 @@
 #  git_URL      :text
 #  release      :boolean          default(TRUE)
 #  title        :string           not null
+#  uuid         :string           not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  user_id      :bigint(8)

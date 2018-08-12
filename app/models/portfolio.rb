@@ -9,6 +9,7 @@
 #  git_URL      :text
 #  release      :boolean          default(TRUE)
 #  title        :string           not null
+#  uuid         :string           not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  user_id      :bigint(8)
@@ -25,6 +26,9 @@
 
 class Portfolio < ApplicationRecord
   belongs_to :user
+  include FriendlyId
+  friendly_id :uuid
+  before_create :set_uuid
   mount_uploader :catcheye_img, ImageUploader
   validates :user_id, presence: true
   validates :title, presence:true, length: { maximum: 100 }
@@ -36,5 +40,9 @@ class Portfolio < ApplicationRecord
       if catcheye_img.size > 5.megabytes
         errors.add(:catcheye_img, "画像ファイルは5MB以下にしてください")
       end
+    end
+
+    def set_uuid
+      self.uuid = SecureRandom.hex(4)
     end
 end

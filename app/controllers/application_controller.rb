@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def correct_user
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     redirect_to(porpos_path) unless current_user?(@user)
   end
 

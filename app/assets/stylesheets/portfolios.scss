@@ -26,38 +26,67 @@
         }
       }
       .portfolio_right_content {
-        height: 420px;
+        height: auto;
         background: rgba(255, 255, 255, 0.5);
-        padding: 40px 64px;
+        padding: 30px 48px;
         table {
-          width: auto;
-          font-size: 22px;
+          table-layout: fixed;
+          width: 100%;
+          font-size: 20px;
           tr {
+            border-bottom: 1px solid rgba(113, 132, 142, 0.5);
             height: 50px;
-            &:last-child {
-              border-top: 1px  solid rgb(226, 226, 226);
-              border-bottom: 1px  solid rgb(226, 226, 226);
+            &:nth-child(odd){
+              background: rgba(179, 202, 254, 0.2);
+            }
+            &:nth-child(even){
+              background: rgba(179, 245, 254, 0.2);
+            }
+            &:last-child{
+              border: none;
             }
           }
           td {
+            padding: 0;
             &:first-child {
+              border-right: 3px double rgba(113, 132, 142, 0.5);
+              padding-left: 5px;
+              text-align: center;
+              width: 37%;
               padding-right: 10px;
             }
-            &:nth-child(3) {
+            &:nth-child(2) {
+              width: 63%;
               color: #333;
               padding-left: 10px;
+              text-align: left;
               font-weight: bold;
               text-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+              a {
+                text-decoration: none;
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -o-text-overflow: ellipsis; /* Opera9,10対応 */
+              }
             }
-            padding: 0;
-            text-align: left;
           }
         }
-        p {
-          overflow: hidden;
-          max-height: 7.2em; /* 2em（行）x line-heightの1.8 */
-          font-size: 16px;
-          line-height: 1.8;
+        // p {
+        //   overflow: hidden;
+        //   max-height: 7.2em; /* 2em（行）x line-heightの1.8 */
+        //   font-size: 16px;
+        //   line-height: 1.8em;
+        // }
+      }
+      h3 {
+        border-top: 2px  solid rgb(226, 226, 226);
+        margin: 20px 0px 5px 0px;
+        padding-top: 10px;
+         &:first-letter {
+        font-size: 1.6em;
+        color: $color-accent;
         }
       }
     }

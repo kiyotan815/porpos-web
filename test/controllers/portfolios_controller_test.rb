@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PortfoliosControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get portfolios_new_url
+    get signup_path
     assert_response :success
   end
 

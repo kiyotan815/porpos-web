@@ -29,10 +29,10 @@ one:
   name: MyString
   title: MyString
   description: MyText
-  URL: MyText
-  git_URL: MyText
+  URL:
+  git_URL: 
   catcheye_img: MyString
-  release: false
+  release: true
   user: one
 
 two:

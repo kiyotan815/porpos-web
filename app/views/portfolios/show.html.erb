@@ -10,20 +10,23 @@
       <table>
         <tr>
           <td>タイトル</td>
-          <td>:</td>
-          <td><%= @portfolio.title %></td>
+          <td>
+            <% unless @portfolio.URL.blank? %>
+              <%= link_to @portfolio.title, @portfolio.URL %>
+            <% else %>
+               <%= @portfolio.title %>
+            <% end %>
+          </td>
         </tr>
         <tr>
           <td>投稿者</td>
-          <td>:</td>
-          <td><%= @portfolio.user.name %></td>
+          <td><%= link_to @portfolio.user.name, @portfolio.user %></td>
         </tr>
         <tr>
           <td>URL</td>
-          <td>:</td>
           <td>
             <% unless @portfolio.URL.blank? %>
-              <%= link_to @portfolio.URL%>
+              <%= link_to @portfolio.URL, @portfolio.URL %>
             <% else %>
                未登録
             <% end %>
@@ -31,21 +34,16 @@
         </tr>
         <tr>
           <td>github_URL</td>
-          <td>:</td>
           <td>
             <% unless @portfolio.git_URL.blank? %>
-              <%= link_to @portfolio.git_URL%>
+              <%= link_to @portfolio.git_URL, @portfolio.git_URL %>
             <% else %>
                未登録
             <% end %>
           </td>
         </tr>
-        <tr>
-          <td>詳細</td>
-          <td></td>
-          <td></td>
-        </tr>
       </table>
+      <h3>詳細</h3>
       <%= simple_format(@portfolio.description) %>
     </div>
   </div>

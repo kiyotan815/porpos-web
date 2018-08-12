@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+$color-blue: #a2a2e7;
+$color-accent: #966d60;
 html {
   position: relative;
   min-height: 100%;
@@ -53,11 +54,11 @@ body {
   transition: 0.2s;
   &:hover {
     @media screen and (min-device-width: 1025px) {
-      -moz-transform: rotate(5deg);
-      -webkit-transform: rotate(5deg);
-      -o-transform: rotate(5deg);
-      -ms-transform: rotate(5deg);
-      transform: rotate(5deg);
+      -moz-transform: rotate(3deg);
+      -webkit-transform: rotate(3deg);
+      -o-transform: rotate(3deg);
+      -ms-transform: rotate(3deg);
+      transform: rotate(3deg);
     }
   }
   @media screen and (max-device-width: 1024px){
@@ -146,7 +147,7 @@ body {
 
 @media screen and (max-device-width: 420px) {
 	.portfolio_content {
-		width: calc(50% - 30px);
+		width: calc(50% - 15px);
 		margin: 10px 0px 30px 0px;
 		padding:0;
 		.portfolio_card {
@@ -180,14 +181,58 @@ body {
 @media screen and (min-device-width: 1025px) {
   .portfolio_content {
     position: relative;
-  	width: calc(25% - 15px);
+  	width: calc(25% - 18px);
   	margin: 15px 0px;
   	padding:0;
     &:nth-child(4n+2){
-      margin-left: 20px;
+      margin-left: 24px;
     }
     &:nth-child(4n+3){
-      margin: 15px 20px;
+      margin: 15px 24px;
     }
+  }
+}
+
+//animetion//
+@media screen and (min-device-width: 1025px){
+  @keyframes SlideDown {
+    0% {transform: translateY(-100%);}
+    100% {transform: translateY(0);}
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateX(20%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateX(20%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+  @keyframes fadeInCenter {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+  }
+  @-webkit-keyframes fadeInCenter {
+    0% { opacity: 0 }
+    100% {opacity: 1 }
+  }
+  @keyframes display_none {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+  }
+  @-webkit-keyframes display_none {
+    0% { opacity: 0 }
+    100% {opacity: 1 }
   }
 }

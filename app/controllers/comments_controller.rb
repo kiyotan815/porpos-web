@@ -7,9 +7,8 @@ class CommentsController < ApplicationController
 			flash[:success] = 'コメントを投稿しました'
 			redirect_to comment.portfolio
 		else
-			redirect_to :back, flash: {
-				comment: comment,
-				error_messages: comment.errors.full_messages
+			redirect_to comment.portfolio, flash: {
+				danger: "コメントを入力してください"
 			}
 		end
 	end
@@ -23,6 +22,6 @@ class CommentsController < ApplicationController
 	private
 
 	def comment_params
-    params.require(:comment).permit(:portfolio_id, :comment)
+    params.require(:comment).permit(:portfolio_id, :comment, :user_id)
   end
 end

@@ -10,17 +10,19 @@
       </div>
 
       <div class="comments">
-        <div class="comment__form">
-          <p class="p-comment__formTitle">コメント記入</p>
-          <%= form_for @comment do |f| %>
-            <%= f.hidden_field :portfolio_id  %>
-            <div class="form-group">
-              <%= f.label :comment, 'コメント' %>
-              <%= f.text_area :comment, class: 'form-control', rows: 4 %>
-            </div>
-            <%= f.submit '送信', class: 'btn btn-primary' %>
-          <% end %>
-        </div>
+        <% if logged_in? %>
+          <div class="comment__form">
+            <p class="p-comment__formTitle">コメント記入</p>
+            <%= form_for @comment do |f| %>
+              <%= f.hidden_field :portfolio_id  %>
+              <%= f.hidden_field :user_id %>
+              <div class="form-group">
+                <%= f.text_area :comment, class: 'form-control', rows: 4 %>
+              </div>
+              <%= f.submit '送信', class: 'btn btn-primary' %>
+            <% end %>
+          </div>
+        <% end %>
         <div class="p-comment__list">
           <div class="p-comment_listTitle">コメント</div>
           <%= render @portfolio.comments %>

@@ -1,12 +1,33 @@
 <% provide(:title, @portfolio.title) %>
 <div class="container portfolio__show">
   <div class="flex">
-    <div class="portfolio_left_content">
-      <%= link_to @portfolio.URL do %>
-        <%= image_tag @portfolio.catcheye_img.url %>
-      <% end %>
+    <div class="portfolio_left_content content">
+
+      <div class="catcheye_img">
+        <%= link_to @portfolio.URL do %>
+          <%= image_tag @portfolio.catcheye_img.url %>
+        <% end %>
+      </div>
+
+      <div class="comments">
+        <div class="comment__form">
+          <p class="p-comment__formTitle">コメント記入</p>
+          <%= form_for @comment do |f| %>
+            <%= f.hidden_field :portfolio_id  %>
+            <div class="form-group">
+              <%= f.label :comment, 'コメント' %>
+              <%= f.text_area :comment, class: 'form-control', rows: 4 %>
+            </div>
+            <%= f.submit '送信', class: 'btn btn-primary' %>
+          <% end %>
+        </div>
+        <div class="p-comment__list">
+          <div class="p-comment_listTitle">コメント</div>
+          <%= render @portfolio.comments %>
+        </div>
+      </div>
     </div>
-    <div class="portfolio_right_content">
+    <div class="portfolio_right_content content">
       <table>
         <tr>
           <td>タイトル</td>
@@ -45,6 +66,9 @@
       </table>
       <h3>詳細</h3>
       <%= simple_format(@portfolio.description) %>
+    </div>
+    <div class="content">
+
     </div>
   </div>
 </div>

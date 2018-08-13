@@ -4,24 +4,32 @@
     .flex {
       display: flex;
       align-items: flex-start;
-      height: 420px;
-      div {
+
+      .content {
         width: calc(50% - 20px);
         margin: 0px 5px;
       }
       .portfolio_left_content {
-        padding: 10px;
-        background: url(/images/card_back.jpg);
-        box-shadow: 3px 3px 4px  gray;
-        border-radius: 1%;
-        img {
-          opacity: 0.9;
-          width: 100%;
-          max-height: 400px;
-          border: 1px solid silver;
-          transition: 0.2s;
-          &:hover {
-             opacity: 1;
+        .catcheye_img{
+          padding: 10px;
+          background: url(/images/card_back.jpg);
+          box-shadow: 3px 3px 4px  gray;
+          border-radius: 1%;
+          img {
+            opacity: 0.9;
+            width: 100%;
+            max-height: 400px;
+            border: 1px solid silver;
+            transition: 0.2s;
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+        .comments {
+          margin: 20px;
+          .comment__form{
+            margin-bottom: 30px;
           }
         }
       }

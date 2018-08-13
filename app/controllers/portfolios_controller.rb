@@ -24,6 +24,7 @@ class PortfoliosController < ApplicationController
 
   def show
     @portfolio = Portfolio.friendly.find(params[:id])
+    @comment = Comment.new(portfolio_id: @portfolio.id)
   end
 
   def destroy

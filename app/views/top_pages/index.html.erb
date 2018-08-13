@@ -7,8 +7,8 @@
       <%= link_to "PorPos!", portfolios_new_path %>
     <% else %>
       <p>会員登録,ログインすることで投稿を行うことができます。</p>
-      <a class="btn btn-primary btn-lg" href="/signup" role="button">会員登録 &raquo;</a>
-      <a class="btn btn-primary btn-lg" href="/login" role="button">ログイン &raquo;</a>
+      <%= link_to "新規登録", signup_path %>
+      <%= link_to "ログイン", login_path %>
     <% end %>
   </div>
 </div>

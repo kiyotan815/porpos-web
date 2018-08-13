@@ -8,6 +8,7 @@
 #  icon_img        :string
 #  name            :string
 #  password_digest :string
+#  uuid            :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #

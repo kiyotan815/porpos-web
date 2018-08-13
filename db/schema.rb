@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180806065531) do
+ActiveRecord::Schema.define(version: 20180812152415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text "comment"
+    t.bigint "portfolio_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["portfolio_id", "created_at"], name: "index_comments_on_portfolio_id_and_created_at"
+    t.index ["portfolio_id"], name: "index_comments_on_portfolio_id"
+  end
 
   create_table "portfolios", force: :cascade do |t|
     t.string "title", null: false
@@ -25,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180806065531) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "uuid", null: false
     t.index ["user_id", "created_at"], name: "index_portfolios_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_portfolios_on_user_id"
   end
@@ -37,8 +47,10 @@ ActiveRecord::Schema.define(version: 20180806065531) do
     t.string "password_digest"
     t.boolean "admin", default: false
     t.string "icon_img"
+    t.string "uuid", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "comments", "portfolios"
   add_foreign_key "portfolios", "users"
 end

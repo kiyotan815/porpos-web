@@ -31,7 +31,7 @@ class User < ApplicationRecord
   mount_uploader :icon_img, ImageUploader
   before_save { email.downcase! }
   before_create :set_uuid
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: true, length: { maximum: 10 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
                                     format: { with: VALID_EMAIL_REGEX },

@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
+  before_action :request_path
 
   private
 
@@ -11,12 +12,16 @@ class ApplicationController < ActionController::Base
     redirect_to login_url
   end
 
-  def correct_user
-    @user = User.friendly.find(params[:id])
-    redirect_to(porpos_path) unless current_user?(@user)
-  end
+
 
   def admin_user
     redirect_to(porpos_path) unless current_user.admin?
+  end
+
+  def request_path
+      @path = controller_path + '#' + action_name
+      def @path.is(*str)
+          str.map{|s| self.include?(s)}.include?(true)
+      end
   end
 end

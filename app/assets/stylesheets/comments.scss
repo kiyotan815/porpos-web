@@ -1,3 +1,31 @@
-// Place all the styles related to the Comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.comments {
+	margin-top: 30px;
+	padding: 10px;
+	.comment__form{
+		padding: 10px 0px;
+		border-top: 2px  solid rgb(226, 226, 226);
+
+	}
+	.p-comment__list{
+		padding: 20px 0;
+		.p-comment_listTitle {
+			border-bottom: 2px  solid rgb(226, 226, 226);
+			font-size: 20px;
+			font-weight: bold;
+			&:first-letter {
+				font-size: 1.6em;
+				color: $color-accent;
+			}
+		}
+		.p-comment__item  {
+			padding: 10px 0;
+			border-bottom: 2px  solid rgb(226, 226, 226);
+			p {
+
+			}
+			.portfolio__user__link {
+				font-weight: bold;
+			}
+		}
+	}
+}

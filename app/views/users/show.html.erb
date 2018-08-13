@@ -3,10 +3,8 @@
   <div class="myprofile_content">
       <%= image_tag @user.icon_img.url %>
       <h1><%= @user.name %></h1>
-      <%if logged_in? %>
-        <% if @user.id == current_user.id || current_user.admin?%>
+      <%if logged_in? && current_user?(@user) || current_user.admin? %>
           <h3><%= @user.email %></h3>
-        <% end %>
       <% end %>
     </div>
   </div>
@@ -15,7 +13,7 @@
   <h1>投稿した作品</h1>
   <div class="container flexx">
     <div class="flex users__portfolio">
-      <%= render partial: "/shared/portfolio_card", locals: {content: @portfolios, mypage: true} %>
+      <%= render partial: "/shared/portfolio_card", locals: {content: @portfolios} %>
     </div>
   </div>
 </div>

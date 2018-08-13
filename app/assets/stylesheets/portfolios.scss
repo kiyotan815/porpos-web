@@ -26,21 +26,6 @@
             }
           }
         }
-        .comments {
-          margin-top: 30px;
-          padding: 10px;
-          .comment__form{
-            margin-bottom: 30px;
-          }
-          .p-comment_listTitle {
-            font-size: 20px;
-            font-weight: bold;
-            &:first-letter {
-              font-size: 1.6em;
-              color: $color-accent;
-            }
-          }
-        }
       }
       .portfolio_right_content {
         height: auto;

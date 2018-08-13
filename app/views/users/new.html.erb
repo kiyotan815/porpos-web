@@ -1,4 +1,5 @@
-<% provide(:title, '会員登録') %>
+<% provide(:title, '新規登録') %>
+<% provide(:url, signup_path) %>
 <div class="container" id="form">
   <div class="signup_content">
     <div class="form__header">
@@ -7,39 +8,6 @@
       <li><%= link_to "ログイン", login_path %></li>
     </ul>
     </div>
-    <%= form_for(@user, url: signup_path) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-
-      <div class="form-group">
-        <%= f.label :name, "ユーザー名" %><br />
-        <%= f.text_field :name, placeholder: "username", class: 'form-control', autofocus: true%>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :email, "メールアドレス" %><br />
-        <%= f.email_field :email, placeholder: "PC　携帯　どちらでも可", class: 'form-control', autofocus: true, autocomplete: "email" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :password, "パスワード" %>
-        <%= f.password_field :password, placeholder: "6文字以上", class: 'form-control', autocomplete: "off" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :password_confirmation, "パスワード( 確認 )" %><br />
-        <%= f.password_field :password_confirmation, placeholder: "6文字以上", class: 'form-control', autocomplete: "off" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :icon_img, "アイコン画像（後から編集できます）" %>
-        <%= f.file_field :icon_img %>
-      </div>
-      <p>登録すると<%= link_to "利用規約", rules_path %>及び<%= link_to "プライバシーポリシー", privacy_path %>
-         に、同意したことになります。</p>
-      <div class="actions">
-        <%= f.submit "新規登録", class: 'form_btn' %>
-      </div>
-    <% end %>
-
+    <%= render partial: 'form', locals: { user: @user, button__tag: '登録' } %>
   </div>
 </div>

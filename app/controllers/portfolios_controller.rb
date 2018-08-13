@@ -1,6 +1,7 @@
 class PortfoliosController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create]
-  before_action :admin_user, only: [:destroy, :index]
+  before_action :logged_in_user, only: %i[new create edit index destroy]
+  before_action :admin_user, only: %i[index]
+  before_action :correct_user, only: %i[destroy edit]
   def index
     @portfolios = Portfolio.all
   end
@@ -39,5 +40,10 @@ class PortfoliosController < ApplicationController
 
     def portfolio_params
       params.require(:portfolio).permit(:title,:description,:URL,:git_URL,:catcheye_img,:release)
+    end
+
+    def correct_user
+      @portfolio = current_user.portfolios.friendly.find(params[:id])
+      redirect_to root_url if @portfolio.nil?
     end
 end

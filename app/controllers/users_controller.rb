@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update]
-  before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: [:destroy, :index]
+  before_action :logged_in_user, only: %i[edit update]
+  before_action :correct_user,   only: %i[:edit update]
+  before_action :admin_user,     only: %i[:destroy index]
 
   def index
     @users = User.all
@@ -53,4 +53,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :icon_img)
   end
 
+  def correct_user
+    @user = User.friendly.find(params[:id])
+    redirect_to(porpos_path) unless current_user?(@user)
+  end
 end

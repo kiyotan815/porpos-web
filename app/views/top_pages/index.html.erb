@@ -16,19 +16,19 @@
   <div class="container arrival">
     <h1>最近の投稿</h1>
     <div class="flex">
-      <%= render partial: "/shared/portfolio_card", locals: {content: @arrivals, mypage: false} %>
+      <%= render partial: "/shared/portfolio_card", locals: {content: @arrivals} %>
     </div>
   </div>
   <div class="container popular">
     <h1>人気</h1>
     <div class="flex">
-      <%= render partial: "/shared/portfolio_card", locals: {content: @arrivals, mypage: false} %>
+      <%= render partial: "/shared/portfolio_card", locals: {content: @arrivals} %>
     </div>
   </div>
   <div class="container all_portfolio">
     <h1>全投稿</h1>
     <div class="flex">
-      <%= render partial: "/shared/portfolio_card", locals: {content: @portfolios, mypage: false} %>
+      <%= render partial: "/shared/portfolio_card", locals: {content: @portfolios} %>
     </div>
   </div>
 </div>

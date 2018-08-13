@@ -55,7 +55,7 @@
   cursor        : pointer;     /* カーソル   */
   padding       : 12px 52px;   /* 余白       */
   background    : #f2f2f2;     /* 背景色     */
-  color         : #9d9d9d;     /* 文字色     */
+  color         : $color-accent;     /* 文字色     */
   line-height   : 1em;         /* 1行の高さ  */
   transition    : 0.5s;         /* なめらか変化 */
   box-shadow    : 2px 2px 3px #666666;  /* 影の設定 */

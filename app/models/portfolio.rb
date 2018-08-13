@@ -27,6 +27,9 @@
 class Portfolio < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
+  include FriendlyId
+  before_create :set_uuid
+  friendly_id :uuid
   mount_uploader :catcheye_img, ImageUploader
   validates :user_id, presence: true
   validates :title, presence:true, length: { maximum: 100 }
@@ -38,5 +41,9 @@ class Portfolio < ApplicationRecord
       if catcheye_img.size > 5.megabytes
         errors.add(:catcheye_img, "画像ファイルは5MB以下にしてください")
       end
+    end
+
+    def set_uuid
+      self.uuid = SecureRandom.hex(4)
     end
 end

@@ -23,11 +23,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "アカウント情報の編集が完了しました。"
       redirect_to @user
@@ -37,13 +37,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
+    User.friendly.find(params[:id]).destroy
     flash[:success] = "削除が完了しました"
     redirect_to users_url
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     @portfolios = @user.portfolios.all
   end
 

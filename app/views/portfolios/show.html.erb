@@ -67,8 +67,15 @@
           </td>
         </tr>
       </table>
+
       <h3>詳細</h3>
-      <%= simple_format(@portfolio.description) %>
+      <%= simple_format(@portfolio.description, class:'description') %>
+      <% if logged_in? && (@portfolio.user_id == current_user.id) %>
+      <p class="setting">
+        <%= link_to '編集', edit_portfolio_path %>
+        <%= link_to '削除', portfolio_path, method: :delete, data: { confirm: "[#{@portfolio.title}]を削除しますか？" } %>
+      </p>
+      <% end %>
     </div>
     <div class="content">
 

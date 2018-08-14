@@ -1,10 +1,7 @@
 class PortfoliosController < ApplicationController
-  before_action :logged_in_user, only: %i[new create edit index destroy]
-  before_action :admin_user, only: %i[index]
+  before_action :logged_in_user, only: %i[new create edit destroy]
   before_action :correct_user, only: %i[destroy edit]
-  def index
-    @portfolios = Portfolio.all
-  end
+
 
   def new
     @portfolio = Portfolio.new(flash[:portfolio])
@@ -21,6 +18,17 @@ class PortfoliosController < ApplicationController
   end
 
   def edit
+    @portfolio = Portfolio.friendly.find(params[:id])
+  end
+
+  def update
+    @portfolio = Portfolio.friendly.find(params[:id])
+    if @portfolio.update_attributes(portfolio_params)
+      flash[:success] = "投稿情報の編集が完了しました。"
+      redirect_to @portfolio
+    else
+      render 'edit'
+    end
   end
 
   def show
@@ -33,7 +41,7 @@ class PortfoliosController < ApplicationController
   def destroy
     Portfolio.friendly.find(params[:id]).destroy
     flash[:success] = "削除が完了しました"
-    redirect_to portfolios_url
+    redirect_to porpos_path
   end
 
   private
@@ -43,7 +51,9 @@ class PortfoliosController < ApplicationController
     end
 
     def correct_user
-      @portfolio = current_user.portfolios.friendly.find(params[:id])
-      redirect_to root_url if @portfolio.nil?
+      unless current_user.admin?
+        @portfolio = current_user.portfolios.friendly.find(params[:id])
+        redirect_to root_url if @portfolio.nil?
+      end
     end
 end

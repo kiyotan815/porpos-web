@@ -6,7 +6,7 @@
       <h3 style="text-align: center">投稿編集</h3>
     </ul>
     </div>
-    <%= form_for(@portfolio, url: portfolios_path ) do |f| %>
+    <%= form_for(@portfolio ) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
       <div class="form-group">

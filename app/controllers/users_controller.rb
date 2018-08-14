@@ -1,11 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: %i[edit update]
-  before_action :correct_user,   only: %i[:edit update]
-  before_action :admin_user,     only: %i[:destroy index]
-
-  def index
-    @users = User.all
-  end
+  before_action :correct_user,   only: %i[edit update]
+  before_action :admin_user,     only: %i[:destroy]
 
   def new
     @user = User.new
@@ -39,7 +35,7 @@ class UsersController < ApplicationController
   def destroy
     User.friendly.find(params[:id]).destroy
     flash[:success] = "削除が完了しました"
-    redirect_to users_url
+    redirect_to users_index_path
   end
 
   def show
@@ -55,6 +51,6 @@ class UsersController < ApplicationController
 
   def correct_user
     @user = User.friendly.find(params[:id])
-    redirect_to(porpos_path) unless current_user?(@user)
+    redirect_to porpos_path unless current_user?(@user)
   end
 end

@@ -69,6 +69,10 @@ body {
       h3{
         font-size: 18px;
         font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
       }
       // border: 10px solid black;
       padding: 10px 20px;

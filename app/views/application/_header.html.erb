@@ -5,8 +5,8 @@
       <ul class= "nav navbar-nav navbar-right wf-Kokoro">
         <% if logged_in? %>
           <% if current_user.admin? %>
-            <li><%= link_to "全投稿", portfolios_path %></li>
-            <li><%= link_to "全ユーザー", users_path %></li>
+            <li><%= link_to "全投稿", portfolios_index_path %></li>
+            <li><%= link_to "全ユーザー", users_index_path %></li>
           <% end %>
           <li><%= link_to "投稿する", portfolios_new_path %></li>
           <li class="dropdown">

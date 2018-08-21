@@ -137,7 +137,6 @@
 /* top page */
 body {
   .jumbotron {
-
 		box-shadow: 0 4px 10px 3px gray;
 		animation: SlideDown 0.7s ease 0s 1 normal;
 		-webkit-animation: SlideDown 0.7s ease 0s 1 normal;
@@ -159,12 +158,6 @@ body {
 			letter-spacing: 3px;
 			margin-bottom: 15px;
 			font-weight: bold;
-		}
-		h2 {
-			font-size: 50px;
-			margin-top: 20px;
-			color: $color-accent;
-			opacity: 0.9;
 		}
     a {
 			position: relative;

@@ -18,6 +18,7 @@
 class Like < ApplicationRecord
   belongs_to :user
   belongs_to :portfolio
+  counter_culture :portfolio
   validates  :user_id, presence: true
   validates  :portfolio_id, presence: true
 end

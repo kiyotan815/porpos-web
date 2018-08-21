@@ -7,6 +7,7 @@
 #  catcheye_img :string
 #  description  :text
 #  git_URL      :text
+#  likes_count  :integer          default(0), not null
 #  release      :boolean          default(TRUE)
 #  title        :string           not null
 #  uuid         :string           not null

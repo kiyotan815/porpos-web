@@ -5,6 +5,7 @@ class LikesController < ApplicationController
     @portfolio = Portfolio.find(params[:portfolio_id])
     unless @portfolio.iine?(current_user)
       @portfolio.iine(current_user)
+      @portfolio.reload
       respond_to do |format|
         format.html { redirect_to request.referrer || porpos_path}
         format.js
@@ -16,11 +17,12 @@ class LikesController < ApplicationController
     @portfolio = Like.find(params[:id]).portfolio
     if @portfolio.iine?(current_user)
       @portfolio.uniine(current_user)
+      @portfolio.reload
       respond_to do |format|
         format.html { redirect_to request.referrer || porpos_path }
         format.js
       end
     end
   end
-  
+
 end

@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 20180821080014) do
   create_table "comments", force: :cascade do |t|
     t.text "comment"
     t.bigint "portfolio_id"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["portfolio_id", "created_at"], name: "index_comments_on_portfolio_id_and_created_at"
     t.index ["portfolio_id"], name: "index_comments_on_portfolio_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
@@ -61,10 +61,13 @@ ActiveRecord::Schema.define(version: 20180821080014) do
     t.boolean "admin", default: false
     t.string "icon_img"
     t.string "uuid", null: false
+    t.bigint "portfolio_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["portfolio_id"], name: "index_users_on_portfolio_id"
   end
 
   add_foreign_key "comments", "portfolios"
   add_foreign_key "comments", "users"
   add_foreign_key "portfolios", "users"
+  add_foreign_key "users", "portfolios"
 end

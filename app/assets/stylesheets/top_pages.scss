@@ -14,7 +14,7 @@
   transform: translate(-50%, -50%);
   margin: 0;
   padding: 0;
-  text-shadow: 2px 2px 1px  darkslategray;
+  text-shadow: 2px 2px 2px  black;
   h1 {
     letter-spacing: 8px;
     font-size: 10em;
@@ -176,6 +176,7 @@ body {
       position: relative;
       z-index: 1;
       padding: 10px;
+      color: rgb(39, 46, 55);
       animation: fadeIn 0.7s ease 0.7s 1 forwards;
       -webkit-animation: fadeIn 0.7s ease 0.7s 1 forwards;
       @media screen and (min-device-width: 1025px) {
@@ -191,6 +192,7 @@ body {
       letter-spacing: 3px;
       margin-bottom: 20px;
       font-weight: bold;
+
     }
     p {
       font-weight: bold;
@@ -203,9 +205,10 @@ body {
       -webkit-animation: fadeInCenter 1s ease 1.4s 1 forwards;
       display: inline-block;
       padding: .2em 2em;
-      border: 2px solid $color-accent;
+      border: 2px solid rgb(5, 22, 43);
       border-radius: .4em 2em .5em 3em/3em .5em 2em .5em;
-      color: $color-accent;
+      color: rgb(5, 22, 43);
+      // color: $color-accent;
       font-family: 'Covered By Your Grace', cursive;
       font-weight: 400;
       text-decoration: none;

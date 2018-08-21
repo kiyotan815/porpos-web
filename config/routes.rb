@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
-
-
-
   get 'portfolios/new'
-
   get 'portfolios/edit'
-
   get 'portfolios/show'
-
   root   'top_pages#home'
   get    '/rules',    to: 'top_pages#rules'
   get    '/privacy',  to: 'top_pages#privacy'
@@ -17,6 +11,8 @@ Rails.application.routes.draw do
   get    '/login',    to: 'sessions#new'
   post   '/login',    to: 'sessions#create'
   delete '/logout',   to: 'sessions#destroy'
+
+  resources :likes, only: [:create, :destroy]
   resources :portfolios
   resources :users
   resources :comments, only: %i[create destroy]

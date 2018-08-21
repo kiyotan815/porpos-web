@@ -19,7 +19,8 @@
 
 class User < ApplicationRecord
   has_many :portfolios, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  has_many :comments,   dependent: :destroy
+  has_many :likes,      dependent: :destroy
   include FriendlyId
   friendly_id :uuid
   mount_uploader :icon_img, ImageUploader

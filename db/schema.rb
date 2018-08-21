@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180812152415) do
+ActiveRecord::Schema.define(version: 20180821052729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 20180812152415) do
     t.index ["portfolio_id", "created_at"], name: "index_comments_on_portfolio_id_and_created_at"
     t.index ["portfolio_id"], name: "index_comments_on_portfolio_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "portfolio_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["portfolio_id"], name: "index_likes_on_portfolio_id"
+    t.index ["user_id", "portfolio_id"], name: "index_likes_on_user_id_and_portfolio_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "portfolios", force: :cascade do |t|

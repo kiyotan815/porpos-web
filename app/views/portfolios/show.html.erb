@@ -15,7 +15,7 @@
             <p class="p-comment__formTitle">コメント記入</p>
             <%= form_for @comment do |f| %>
               <%= render 'shared/error_messages', object: f.object %>
-              <%= f.hidden_field :portfolio_id  %>
+              <%= f.hidden_field :portfolio_id %>
               <%= f.hidden_field :user_id %>
               <div class="form-group">
                 <%= f.text_area :comment, class: 'form-control', rows: 4 %>
@@ -38,7 +38,7 @@
             <% unless @portfolio.URL.blank? %>
               <%= link_to @portfolio.title, @portfolio.URL %>
             <% else %>
-               <%= @portfolio.title %>
+              <%= @portfolio.title %>
             <% end %>
           </td>
         </tr>
@@ -52,7 +52,7 @@
             <% unless @portfolio.URL.blank? %>
               <%= link_to @portfolio.URL, @portfolio.URL %>
             <% else %>
-               未登録
+              未登録
             <% end %>
           </td>
         </tr>
@@ -62,19 +62,27 @@
             <% unless @portfolio.git_URL.blank? %>
               <%= link_to @portfolio.git_URL, @portfolio.git_URL %>
             <% else %>
-               未登録
+              未登録
             <% end %>
           </td>
         </tr>
+
+        <% if logged_in? %>
+          <tr class="like">
+            <%= render "likes/like", portfolio: @portfolio %>
+          </tr>
+      <% else %>
+        <% end %>
+
       </table>
 
       <h3>詳細</h3>
-      <%= simple_format(@portfolio.description, class:'description') %>
+      <%= simple_format(@portfolio.description, class: 'description') %>
       <% if logged_in? && (@portfolio.user_id == current_user.id) %>
-      <p class="setting">
-        <%= link_to '編集', edit_portfolio_path %>
-        <%= link_to '削除', portfolio_path, method: :delete, data: { confirm: "[#{@portfolio.title}]を削除しますか？" } %>
-      </p>
+        <p class="setting">
+          <%= link_to '編集', edit_portfolio_path %>
+          <%= link_to '削除', portfolio_path, method: :delete, data: {confirm: "[#{@portfolio.title}]を削除しますか？"} %>
+        </p>
       <% end %>
     </div>
     <div class="content">

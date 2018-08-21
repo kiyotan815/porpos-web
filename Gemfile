@@ -37,6 +37,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'fog'
 gem 'jquery-turbolinks'
 gem 'friendly_id'
+gem 'counter_culture'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

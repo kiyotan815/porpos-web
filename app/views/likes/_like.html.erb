@@ -3,21 +3,19 @@
       <span>
         <% if portfolio.iine?(current_user) %>
           <%= form_for(portfolio.likes.find_by(user_id: current_user.id), html: {id: 'like-button'}, method: :delete, remote: true) do |f| %>
-          <%= button_tag(class: "btn btn-default btn-xs") do %>
-              <i class="fas fa-heart"></i>
+            <%= link_to  "#", :onclick => "$('#like-button').submit()" do %>
+              <i class="fas fa-heart pink"></i>Like!
             <% end %>
           <% end %>
         <% else %>
-          <%= form_for(portfolio.likes.build, remote: true) do |f| %>
+          <%= form_for(portfolio.likes.build, html: {id: 'like-button'}, remote: true) do |f| %>
             <div><%= hidden_field_tag :portfolio_id, portfolio.id %></div>
-            <%= button_tag(class: "btn btn-default btn-xs") do %>
-              <i class="far fa-heart"></i>
+            <%= link_to  "#", :onclick => "$('#like-button').submit()" do %>
+              <i class="fas fa-heart"></i>Like?
             <% end %>
           <% end %>
         <% end %>
       </span>
     </td>
-    <td>
-      <%= portfolio.likes_count %>
-    </td>
+    <td><%= portfolio.likes_count %> Like</td>
 <% end %>

@@ -102,6 +102,22 @@
               }
             }
           }
+          #like-button {
+            a {
+              text-decoration: none;
+              color: inherit;
+              transition: 0.3s;
+              &:hover {
+                color: #4b443f;
+              }
+              i {
+                margin-right: 8px;
+              }
+              .pink {
+                color: rgb(221, 114, 211);
+              }
+            }
+          }
         }
         .setting {
           text-align: right;

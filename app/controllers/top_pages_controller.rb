@@ -5,6 +5,7 @@ class TopPagesController < ApplicationController
 
   def index
     @arrivals = Portfolio.limit(4).order("created_at DESC")
+    @popular = Portfolio.limit(4).order("likes_count DESC")
     @portfolios = Portfolio.order("RANDOM()").all
   end
 

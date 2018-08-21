@@ -12,7 +12,8 @@
       .portfolio_left_content {
         .catcheye_img{
           padding: 10px;
-          background: url(/images/card_back.jpg);
+          //background: url(/images/card_back.jpg);
+          background: #d6d9de;;
           box-shadow: 3px 3px 4px  gray;
           border-radius: 1%;
           img {
@@ -23,6 +24,26 @@
             transition: 0.2s;
             &:hover {
               opacity: 1;
+            }
+          }
+        }
+        .p-comment__item {
+          span {
+            width: 49%;
+            display: inline-block;
+          }
+          .delete_link {
+            padding-right: 8px;
+            text-align: right;
+          }
+          .p-comment__bottomLine {
+            .portfolio__user__link {
+              padding: 0;
+            }
+            p {
+              padding-left: 8px;
+              width: 100%;
+              word-wrap: break-word;
             }
           }
         }

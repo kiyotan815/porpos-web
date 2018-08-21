@@ -17,6 +17,7 @@ ja:
         catcheye_img: 画像
       comment:
         comment: コメント
+        
   errors:
     messages:
       carrierwave_processing_error: failed to be processed

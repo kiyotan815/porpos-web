@@ -9,7 +9,7 @@
       <p><%= simple_format(comment.comment) %></p>
     <span><%= comment.created_at.to_s(:datetime_jp) %></span>
     <% if current_user?(comment.user)%>
-      <span><%= link_to '削除', comment, method: :delete, data: { confirm: '削除してもよろしいですか？' } %></span>
+      <span class="delete_link"><%= link_to '削除', comment, method: :delete, data: { confirm: '削除してもよろしいですか？' } %></span>
     <% end %>
   </div>
 </div>

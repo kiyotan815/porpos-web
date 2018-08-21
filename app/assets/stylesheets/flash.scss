@@ -1,7 +1,20 @@
 .alert {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  z-index: 100;
   list-style-type: none;
   text-align: center;
-  margin: 10px auto;
+  margin: auto;
+  animation: fadeOut 0.7s ease 2s 1 forwards;
+  -webkit-animation: fadeOut 0.7s ease 2s 1 forwards;
+
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
   li {
     text-decoration: underline;
   }

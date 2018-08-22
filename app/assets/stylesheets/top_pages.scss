@@ -14,11 +14,7 @@
   transform: translate(-50%, -50%);
   margin: 0;
   padding: 0;
-<<<<<<< HEAD
   text-shadow: 2px 2px 2px  black;
-=======
-  text-shadow: 2px 2px 1px darkslategray;
->>>>>>> design
   h1 {
     letter-spacing: 8px;
     font-size: 10em;
@@ -267,4 +263,7 @@ body {
 
 @media screen and (min-device-width: 421px) and (max-device-width: 1025px) {
 
+}
+.rules, .privacy {
+  padding: 40px 15px;
 }

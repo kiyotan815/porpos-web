@@ -8,27 +8,11 @@
           <%= image_tag @portfolio.catcheye_img.url %>
         <% end %>
       </div>
-
-      <div class="comments">
-        <% if logged_in? %>
-          <div class="comment__form">
-            <p class="p-comment__formTitle">コメント記入</p>
-            <%= form_for @comment do |f| %>
-              <%= render 'shared/error_messages', object: f.object %>
-              <%= f.hidden_field :portfolio_id  %>
-              <%= f.hidden_field :user_id %>
-              <div class="form-group">
-                <%= f.text_area :comment, class: 'form-control', rows: 4 %>
-              </div>
-              <%= f.submit '送信', class: 'btn btn-primary' %>
-            <% end %>
-          </div>
-        <% end %>
-        <div class="p-comment__list">
-          <div class="p-comment_listTitle">コメント</div>
-          <%= render @portfolio.comments %>
-        </div>
+      <div class="timestamp">
+        <p>投稿日時:<%= @portfolio.created_at.to_s(:datetime_jp)  %> |
+        更新日時:<%= @portfolio.updated_at.to_s(:datetime_jp)  %></p>
       </div>
+
     </div>
     <div class="portfolio_right_content content">
       <table>
@@ -78,7 +62,26 @@
       <% end %>
     </div>
     <div class="content">
-
+      <div class="comments">
+        <% if logged_in? %>
+          <div class="comment__form">
+            <p class="p-comment__formTitle">コメント記入</p>
+            <%= form_for @comment do |f| %>
+              <%= render 'shared/error_messages', object: f.object %>
+              <%= f.hidden_field :portfolio_id  %>
+              <%= f.hidden_field :user_id %>
+              <div class="form-group">
+                <%= f.text_area :comment, class: 'form-control', rows: 4 %>
+              </div>
+              <%= f.submit '送信', class: 'btn btn-primary' %>
+            <% end %>
+          </div>
+        <% end %>
+        <div class="p-comment__list">
+          <div class="p-comment_listTitle">コメント</div>
+          <%= render @portfolio.comments %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

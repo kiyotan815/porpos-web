@@ -14,7 +14,11 @@
   transform: translate(-50%, -50%);
   margin: 0;
   padding: 0;
+<<<<<<< HEAD
   text-shadow: 2px 2px 2px  black;
+=======
+  text-shadow: 2px 2px 1px darkslategray;
+>>>>>>> design
   h1 {
     letter-spacing: 8px;
     font-size: 10em;
@@ -161,16 +165,16 @@ body {
     background-color: #ffebe8;
     overflow: hidden;
     &:before {
-        content: '';
-        background: url(/images/top__back.jpg);
-        opacity: 0.5;
-        filter: blur(2px);
-        position: absolute;
-        top: -8px;
-        left: -8px;
-        right: -8px;
-        bottom: -8px;
-        z-index: -1;
+      content: '';
+      background: url(/images/top__back.jpg);
+      opacity: 0.5;
+      filter: blur(2px);
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      right: -8px;
+      bottom: -8px;
+      z-index: -1;
     }
     .container {
       position: relative;
@@ -225,6 +229,11 @@ body {
   @media screen and (min-device-width: 1025px) {
     opacity: 0;
   }
+  @media screen and (max-device-width: 420px) {
+    .portfolio__user__link {
+      display: none;
+    }
+  }
   animation: fadeInCenter 0.5s ease 0.7s 1 forwards;
   -webkit-animation: fadeInCenter 0.5s ease 0.7s 1 forwards;
   .container {
@@ -249,5 +258,13 @@ body {
       flex-wrap: wrap;
     }
   }
+
+}
+
+@media screen and (max-device-width: 420px) {
+
+}
+
+@media screen and (min-device-width: 421px) and (max-device-width: 1025px) {
 
 }

@@ -1,3 +1,6 @@
+@media screen and (max-device-width: 420px) {
+  #header {display: none;}
+}
 #logo {
   float: left;
   margin-right: 10px;

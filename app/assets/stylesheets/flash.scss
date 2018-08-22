@@ -1,8 +1,16 @@
+
 .alert {
   position: absolute;
-  top: 70px;
-  left: 0;
-  right: 0;
+  @media screen and (max-device-width: 420px) {
+    bottom: 150px;
+    left: 0;
+    right: 0;
+  }
+  @media screen and (min-device-width: 421px) {
+    top: 70px;
+    left: 0;
+    right: 0;
+  }
   z-index: 100;
   list-style-type: none;
   text-align: center;

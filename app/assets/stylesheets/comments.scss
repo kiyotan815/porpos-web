@@ -17,13 +17,25 @@
 			}
 		}
 		.p-comment__item  {
+			span {
+				width: 49%;
+				display: inline-block;
+			}
+			.delete_link {
+				padding-right: 8px;
+				text-align: right;
+				text-decoration: none;
+			}
 			padding: 10px 0;
 			border-bottom: 2px  solid rgb(226, 226, 226);
-			p {
-
+			.comment {
+				padding-left: 8px;
+				width: 100%;
+				word-wrap: break-word;
 			}
 			.portfolio__user__link {
 				font-weight: bold;
+				padding: 0;
 			}
 		}
 	}

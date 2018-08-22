@@ -192,26 +192,6 @@
           font-size: 12px;
         }
       }
-      .p-comment__item {
-        span {
-          width: 49%;
-          display: inline-block;
-        }
-        .delete_link {
-          padding-right: 8px;
-          text-align: right;
-        }
-        .p-comment__bottomLine {
-          .portfolio__user__link {
-            padding: 0;
-          }
-          p {
-            padding-left: 8px;
-            width: 100%;
-            word-wrap: break-word;
-          }
-        }
-      }
     }
     .portfolio_right_content {
       height: auto;
@@ -267,7 +247,24 @@
             }
           }
         }
+        #like-button {
+          a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+            &:hover {
+              color: #4b443f;
+            }
+            i {
+              margin-right: 8px;
+            }
+            .pink {
+              color: rgb(221, 114, 211);
+            }
+          }
+        }
       }
+
       .setting {
         text-align: right;
         margin-top: 20px;

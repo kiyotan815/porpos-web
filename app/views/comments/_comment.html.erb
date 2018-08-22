@@ -6,7 +6,7 @@
         <%= comment.user.name %>
       <% end %>
       </p>
-      <p><%= simple_format(comment.comment) %></p>
+      <p><%= simple_format(comment.comment,class:"comment") %></p>
     <span><%= comment.created_at.to_s(:datetime_jp) %></span>
     <% if current_user?(comment.user)%>
       <span class="delete_link"><%= link_to '削除', comment, method: :delete, data: { confirm: '削除してもよろしいですか？' } %></span>

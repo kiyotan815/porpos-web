@@ -1,4 +1,16 @@
-.footer {
+@media screen and (max-device-width: 420px) {
+  .pc__footer {
+    display: none;
+  }
+}
+
+@media screen and (min-device-width: 421px) {
+  .device__footer {
+    display: none;
+  }
+}
+
+.pc__footer {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -6,34 +18,84 @@
   height: 100px;
   box-shadow: 0 -7px 10px rgba(#020302, 0.31);
   background: url(/images/dark_wood_back.jpg);
-}
-body > .container {
-  padding: 30px 15px 60px;
-}
-.container .text-muted {
-  margin: 20px 0;
-}
-
-.footer > .container {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-.footer ul {
-  text-align: right;
-  li {
-    font-size: 18px;
-    display: inline;
-    padding-left: 50px;
-    a {
-      text-decoration: none;
-      color: #9d9d9d;
-      transition: 0.4s;
-      &:hover {
-        color: white;
+  .text-muted {
+    margin: 20px 0;
+  }
+  span {
+    color: silver;
+    display: block;
+    text-align: left;
+  }
+  ul {
+    text-align: right;
+    li {
+      font-size: 18px;
+      display: inline;
+      padding-left: 50px;
+      a {
+        text-decoration: none;
+        color: #9d9d9d;
+        transition: 0.4s;
+        &:hover {
+          color: white;
+        }
       }
     }
   }
 }
-.footer span {
-  color: silver;
+.device__footer {
+  z-index: 10000;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100px;
+  box-shadow: 0 -7px 10px rgba(#020302, 0.31);
+  background: url(/images/dark_wood_back.jpg);
+  .text-muted {
+    margin: 20px 0;
+  }
+  .footer__menu {
+    margin: 10px 0;
+    width: 100%;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+    .footer__menu__icon {
+      text-align: center;
+      display: inline-block;
+      width: 15%;
+      padding: 7px;
+      &:nth-child(2){ margin: 0 100px}
+      .dropdown-menu {
+        background: url(/images/dark_wood_back.jpg);
+        width: 300px;
+        margin-bottom: 20px;
+        .portfolio__user__link {
+          border-top: 1px solid dimgray;
+          padding: 20px 0px;
+        }
+        li {
+          padding: 10px 5px;
+          font-size: 30px;
+          a {
+            text-decoration: none;
+            &:active {
+              color: inherit;
+              background: inherit;
+            }
+          }
+        }
+      }
+      a {
+        text-decoration: none;
+        color: #9d9d9d;
+        transition: .2s;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
 }

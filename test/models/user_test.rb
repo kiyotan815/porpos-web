@@ -11,10 +11,16 @@
 #  uuid            :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  portfolio_id    :bigint(8)
 #
 # Indexes
 #
-#  index_users_on_email  (email) UNIQUE
+#  index_users_on_email         (email) UNIQUE
+#  index_users_on_portfolio_id  (portfolio_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (portfolio_id => portfolios.id)
 #
 
 require 'test_helper'

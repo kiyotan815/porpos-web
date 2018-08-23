@@ -50,16 +50,14 @@
             <% end %>
           </td>
         </tr>
-
-        <% if logged_in? %>
+        <tr>
+          <td><i class="fas fa-eye"></i></td>
+          <td><%= @portfolio.impressionist_count %> view</td>
+        </tr>
           <tr class="like">
             <%= render "likes/like", portfolio: @portfolio %>
           </tr>
-      <% else %>
-        <% end %>
-
       </table>
-
       <h3>詳細</h3>
       <%= simple_format(@portfolio.description, class: 'description') %>
       <% if logged_in? && (@portfolio.user_id == current_user.id) %>

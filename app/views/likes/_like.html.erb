@@ -1,21 +1,29 @@
-<% if !current_user?(@portfolio.user) %>
-    <td>
-      <span>
-        <% if portfolio.iine?(current_user) %>
-          <%= form_for(portfolio.likes.find_by(user_id: current_user.id), html: {id: 'like-button'}, method: :delete, remote: true) do |f| %>
-            <%= link_to  "#", :onclick => "$('#like-button').submit()" do %>
-              <i class="fas fa-heart pink"></i>Like!
+<% if logged_in? %>
+  <% if !current_user?(@portfolio.user) %>
+      <td>
+        <span>
+          <% if portfolio.iine?(current_user) %>
+            <%= form_for(portfolio.likes.find_by(user_id: current_user.id), html: {id: 'like-button'}, method: :delete, remote: true) do |f| %>
+              <%= link_to  "#", :onclick => "$('#like-button').submit()" do %>
+                <i class="fas fa-heart pink"></i>Like!
+              <% end %>
+            <% end %>
+          <% else %>
+            <%= form_for(portfolio.likes.build, html: {id: 'like-button'}, remote: true) do |f| %>
+              <div><%= hidden_field_tag :portfolio_id, portfolio.id %></div>
+              <%= link_to  "#", :onclick => "$('#like-button').submit()" do %>
+                <i class="fas fa-heart"></i>Like?
+              <% end %>
             <% end %>
           <% end %>
-        <% else %>
-          <%= form_for(portfolio.likes.build, html: {id: 'like-button'}, remote: true) do |f| %>
-            <div><%= hidden_field_tag :portfolio_id, portfolio.id %></div>
-            <%= link_to  "#", :onclick => "$('#like-button').submit()" do %>
-              <i class="fas fa-heart"></i>Like?
-            <% end %>
-          <% end %>
-        <% end %>
-      </span>
-    </td>
+        </span>
+      </td>
+      <td><%= portfolio.likes_count %> Like</td>
+  <% else %>
+    <td><i class="fas fa-heart"></i></td>
     <td><%= portfolio.likes_count %> Like</td>
+  <% end %>
+<% else %>
+  <td><i class="fas fa-heart"></i></td>
+  <td><%= portfolio.likes_count %> Like</td>
 <% end %>

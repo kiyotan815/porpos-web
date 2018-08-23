@@ -16,19 +16,19 @@
     <ul class="footer__menu">
       <li class="footer__menu__icon">
         <%= link_to porpos_path do %>
-          <i class="fas fa-home fa-4x"></i>
+          <i class="fas fa-home fa-5x"></i>
         <% end %>
       </li>
       <li class="footer__menu__icon">
         <%= link_to portfolios_new_path do %>
-          <i class="far fa-calendar-plus fa-4x"></i>
+          <i class="far fa-calendar-plus fa-5x"></i>
       <% end %>
       </li>
       <li class="dropup footer__menu__icon">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-          <i class="fas fa-address-card fa-4x"></i>
+          <i class="fas fa-address-card fa-5x"></i>
         </a>
-        <ul class="dropdown-menu" role="menu">
+        <ul class="dropdown-menu dropdown-menu-right" role="menu">
           <% if logged_in? %>
             <% if current_user.admin? %>
               <li><%= link_to "全投稿", portfolios_index_path %></li>

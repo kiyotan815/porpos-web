@@ -30,6 +30,7 @@ class Portfolio < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes,    dependent: :destroy
   has_many :iine_users, through: :likes, source: :user
+  is_impressionable
   include FriendlyId
   before_create :set_uuid
   friendly_id :uuid

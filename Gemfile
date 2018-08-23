@@ -38,6 +38,7 @@ gem 'fog'
 gem 'jquery-turbolinks'
 gem 'friendly_id'
 gem 'counter_culture'
+gem 'impressionist'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

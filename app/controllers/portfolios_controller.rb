@@ -1,7 +1,7 @@
 class PortfoliosController < ApplicationController
   before_action :logged_in_user, only: %i[new create edit destroy]
   before_action :correct_user, only: %i[destroy edit]
-
+  impressionist :actions => [:show]
 
   def new
     @portfolio = Portfolio.new(flash[:portfolio])
@@ -33,6 +33,7 @@ class PortfoliosController < ApplicationController
 
   def show
     @portfolio = Portfolio.friendly.find(params[:id])
+    impressionist(@portfolio, nil, unique: [:session_hash])
     if logged_in?
       @comment = Comment.new(portfolio_id: @portfolio.id, user_id: current_user.id)
     end

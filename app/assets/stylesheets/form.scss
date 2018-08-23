@@ -1,68 +1,138 @@
-
-#form {
-  .form__header {
-    border-bottom: 1.4px solid rgb(178, 179, 178);
-    ul {
-      width: 100%;
-      list-style: none;
-      overflow: hidden;
-      padding: 0;
-      li {
-        width:50%;
-        display: inline-block;
-        float: left;
-        text-align: center;
-        a {
-          display: block;
-          width: 100%;
-          text-decoration: none;
-          font-size: 16px;
+@media screen and (min-device-width: 421px) {
+  #form {
+    margin-top : 30px;
+    margin-bottom: 50px;
+    border-radius : 5%;
+    padding: 20px;
+    width: 35%;
+    // background: white;
+    background: url(/images/myportfolio_back.png);
+    box-shadow: 0 0 5px;
+    a { text-decoration: none; }
+    form { margin-top: 18px; }
+    .actions { text-align: center; }
+    .active_page {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .form__header {
+      border-bottom: 1.4px solid rgb(178, 179, 178);
+      ul {
+        width: 100%;
+        list-style: none;
+        overflow: hidden;
+        padding: 0;
+        li {
+          width:50%;
+          display: inline-block;
+          float: left;
+          text-align: center;
+          a {
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            font-size: 16px;
+          }
         }
       }
     }
   }
-  margin-top : 30px;
-  a {
-    text-decoration: none;
+  .form_btn {
+    margin: 8px 0;
+    display       : inline-block;
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 13pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 52px;   /* 余白       */
+    background    : #f2f2f2;     /* 背景色     */
+    color         : $color-accent;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : 0.5s;         /* なめらか変化 */
+    box-shadow    : 2px 2px 3px #666666;  /* 影の設定 */
+    border        : 1px solid gray;    /* 枠の指定 */
   }
-  margin-bottom: 50px;
-  border-radius : 5%;
-  padding: 20px;
-  width: 35%;
-  // background: white;
-  background: url(/images/myportfolio_back.png);
-  box-shadow: 0 0 5px;
-  form {
-    margin-top: 18px;
-  }
-  .actions {
-    text-align: center;
-  }
-  .active_page {
-    font-weight: bold;
-    font-size: 18px;
+  .form_btn:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    background    : #e2e2e2;
+    color         : gray;
   }
 }
 
+@media screen and (max-device-width: 420px) {
+  #form {
+    padding-top: 20%;
+    font-size: 30px;
+    // border-radius : 5%;
+    // background: white;
+    // background: url(/images/myportfolio_back.png);
+    // box-shadow: 0 0 5px;
+    a {
+      text-decoration: none;
+    }
+    .form-group { margin: 30px 0;}
+    form { margin-top: 18px; }
+    .actions { text-align: center; }
+    .active_page {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    input {
+      height: 80px;
+      &::placeholder {
+        font-size: 24px;
+      }
+    }
+    textarea {
+      &::placeholder {
+        font-size: 24px;
+      }
+    }
+    .form__header {
+      border-bottom: 1.4px solid rgb(178, 179, 178);
+      margin-bottom: 50px;
+      h3 {font-size: 40px;}
+      ul {
+        width: 100%;
+        list-style: none;
+        overflow: hidden;
+        padding: 0;
+        li {
+          width:50%;
+          display: inline-block;
+          float: left;
+          text-align: center;
+          a {
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            font-size: 40px;
+          }
+        }
+      }
+    }
+  }
 
 
-.form_btn {
-  margin: 8px 0;
-  display       : inline-block;
-  border-radius : 5%;          /* 角丸       */
-  font-size     : 13pt;        /* 文字サイズ */
-  text-align    : center;      /* 文字位置   */
-  cursor        : pointer;     /* カーソル   */
-  padding       : 12px 52px;   /* 余白       */
-  background    : #f2f2f2;     /* 背景色     */
-  color         : $color-accent;     /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
-  transition    : 0.5s;         /* なめらか変化 */
-  box-shadow    : 2px 2px 3px #666666;  /* 影の設定 */
-  border        : 1px solid gray;    /* 枠の指定 */
-}
-.form_btn:hover {
-  box-shadow    : none;        /* カーソル時の影消去 */
-  background    : #e2e2e2;
-  color         : gray;
+
+  .form_btn {
+    margin: 20px 0;
+    display       : inline-block;
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 30pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 104px;   /* 余白       */
+    background    : #f2f2f2;     /* 背景色     */
+    color         : $color-accent;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : 0.5s;         /* なめらか変化 */
+    box-shadow    : 2px 2px 3px #666666;  /* 影の設定 */
+    border        : 1px solid gray;    /* 枠の指定 */
+  }
+  .form_btn:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    background    : #e2e2e2;
+    color         : gray;
+  }
 }

@@ -33,7 +33,7 @@ class PortfoliosController < ApplicationController
 
   def show
     @portfolio = Portfolio.friendly.find(params[:id])
-    impressionist(@portfolio, nil, unique: [:session_hash])
+    impressionist(@portfolio, nil)
     if logged_in?
       @comment = Comment.new(portfolio_id: @portfolio.id, user_id: current_user.id)
     end

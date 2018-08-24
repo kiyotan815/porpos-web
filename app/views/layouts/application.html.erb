@@ -6,6 +6,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="twitter:card" content="summary" /> /*①*/
+    <meta name="twitter:site" content="@kiyota31634238" /> /*②*/
+    <meta property="og:url" content="http://192.168.99.100:3000/" /> /*③*/
+    <meta property="og:title" content="PorPos!" /> /*④*/
+    <meta property="og:description" content="初学者向けポートフォリオ投稿サイト" /> /*⑤*/
+    <meta property="og:image" content="<%= asset_path 'twitter_catcheye.png' %>" /> /*⑥*/
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Patua+One|Shrikhand" rel="stylesheet">
     <link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/earlyaccess/mplus1p.css" rel="stylesheet" />

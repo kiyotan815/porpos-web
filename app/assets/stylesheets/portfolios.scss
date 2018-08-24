@@ -9,6 +9,7 @@
       .content {
         width: calc(100% - 20px);
         margin: 0px 5px;
+        position: relative;
       }
       .portfolio_left_content {
         .catcheye_img{
@@ -286,6 +287,6 @@
   }
 }
 
-.twitter-share-button, .twitter-follow-button {
+.twitter-button {
   margin-top: 10px;
 }

@@ -129,7 +129,7 @@
       }
       h3 {
         border-top: 2px  solid rgb(226, 226, 226);
-        margin: 20px 0px 5px 0px;
+        margin: 5px 0px 8px 0px;
         padding-top: 10px;
          &:first-letter {
         font-size: 1.6em;
@@ -266,7 +266,7 @@
     }
     h3 {
       border-top: 2px  solid rgb(226, 226, 226);
-      margin: 20px 0px 5px 0px;
+      margin: 5px 0px 8px 0px;
       padding-top: 10px;
       font-size: 30px;
       &:first-letter {
@@ -284,4 +284,8 @@
     height: 100px;
     width: 140px;
   }
+}
+
+.twitter-share-button, .twitter-follow-button {
+  margin-top: 10px;
 }

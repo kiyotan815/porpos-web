@@ -57,6 +57,11 @@
           <tr class="like">
             <%= render "likes/like", portfolio: @portfolio %>
           </tr>
+          <tr>
+            <td><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="PorPos! <%= "『#{@portfolio.user.name}』さんの、ポートフォリオ【#{@portfolio.title}】をシェアする！" %>" data-lang="ja" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></td>
+            <td><a href="https://twitter.com/<%= "@kiyota31634238" %>?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false"</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></td>
+
+          </tr>
       </table>
       <h3>詳細</h3>
       <%= simple_format(@portfolio.description, class: 'description') %>

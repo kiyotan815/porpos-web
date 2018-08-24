@@ -1,9 +1,10 @@
 .comments {
+	grid-row: 2 / 3;
+	grid-column: 1 / 2	;
 	padding: 10px;
 	.comment__form{
 		padding: 10px 0px;
 		border-top: 2px  solid rgb(226, 226, 226);
-
 	}
 	.p-comment__list{
 		padding: 20px 0;

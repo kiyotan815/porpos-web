@@ -4,7 +4,7 @@
     <div class="portfolio_left_content content">
 
       <div class="catcheye_img">
-        <%= link_to @portfolio.URL do %>
+        <%= link_to @portfolio.URL  do %>
           <%= image_tag @portfolio.catcheye_img.url %>
         <% end %>
       </div>
@@ -34,7 +34,7 @@
           <td>URL</td>
           <td>
             <% unless @portfolio.URL.blank? %>
-              <%= link_to @portfolio.URL, @portfolio.URL %>
+              <%= link_to @portfolio.URL, @portfolio.URL, target: "_blank" %>
             <% else %>
               未登録
             <% end %>
@@ -44,7 +44,7 @@
           <td>github_URL</td>
           <td>
             <% unless @portfolio.git_URL.blank? %>
-              <%= link_to @portfolio.git_URL, @portfolio.git_URL %>
+              <%= link_to @portfolio.git_URL, @portfolio.git_URL, target: "_blank" %>
             <% else %>
               未登録
             <% end %>

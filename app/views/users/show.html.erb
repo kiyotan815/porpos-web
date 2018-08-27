@@ -6,6 +6,7 @@
       <%if logged_in? %>
         <% if current_user?(@user) || current_user.admin? %>
           <h3><%= @user.email %></h3>
+          <p>(他ユーザーには表示されてません)</p>
         <% end %>
       <% end %>
     </div>

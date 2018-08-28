@@ -1,7 +1,7 @@
 <% provide(:title, @user.name) %>
 <div class="my__page">
   <div class="myprofile_content">
-      <%= image_tag @user.icon_img.url %>
+      <%= image_tag @user.icon_img.thumb.url %>
       <h1><%= @user.name %></h1>
       <%if logged_in? %>
         <% if current_user?(@user) || current_user.admin? %>

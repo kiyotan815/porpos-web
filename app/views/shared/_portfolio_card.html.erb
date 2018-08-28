@@ -2,7 +2,7 @@
   <div class="portfolio_content">
     <div class="portfolio_card">
       <%= link_to "", portfolio ,class: "portfolio_link" %>
-      <%= image_tag portfolio.catcheye_img.url %>
+      <%= image_tag portfolio.catcheye_img.thumb.url %>
       <figcaption>
         <h3><%= portfolio.title %></h3>
         <%= simple_format(portfolio.description, class: 'caption') %>
@@ -15,7 +15,7 @@
     <% unless @path.is('users#show') %>
       <p class="portfolio__user__link">
         <%= link_to portfolio.user do %>
-          <%= image_tag portfolio.user.icon_img.url %>
+          <%= image_tag portfolio.user.icon_img.thumb.url %>
           <%= portfolio.user.name %>
         <% end %>
       </p>

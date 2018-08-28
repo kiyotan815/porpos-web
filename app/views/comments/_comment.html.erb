@@ -2,7 +2,7 @@
   <div class="p-comment__bottomLine">
     <p class="portfolio__user__link">
       <%= link_to comment.user do %>
-        <%= image_tag comment.user.icon_img.url %>
+        <%= image_tag comment.user.icon_img.thumb.url %>
         <%= comment.user.name %>
       <% end %>
       </p>

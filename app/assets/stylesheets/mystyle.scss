@@ -252,3 +252,11 @@ body {
     100% {opacity: 1 }
   }
 }
+
+.modal-body {
+  img {
+    max-height: 30%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}

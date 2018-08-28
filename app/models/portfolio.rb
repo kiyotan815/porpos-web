@@ -38,7 +38,7 @@ class Portfolio < ApplicationRecord
   validates :user_id, presence: true
   validates :title, presence:true, length: { maximum: 100 }
   validate :catcheye_size
-  THUMBNAIL_SIZE = [400, 800]
+  THUMBNAIL_SIZE = [300, 800]
 
   def iine(user)
     likes.create(user_id: user.id)

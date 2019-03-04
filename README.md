@@ -28,10 +28,10 @@ docker-compose でrails postgresコンテナを使用し開発→herokuへデプ
 **migrate**  
 `docker-compose run web bundle exec rails db:migrate`  
   
-**起動**
+**起動**  
 `docker-compose up`  
 background実行する場合は`-d`オプションを付与。  
-  
+    
 **アクセス**  
 ```
 localhost:3000
